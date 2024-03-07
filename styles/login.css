@@ -20,8 +20,8 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  border: 2px solid black;
 }
+
 .right-col h1,
 .right-col h5{
   text-align: left;
