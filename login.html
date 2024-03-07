@@ -4,10 +4,37 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Exclusive E-Commerce Login</title>
-    <link rel="stylesheet" href="styles/shared.css">
-    <link rel="stylesheet" href="styles/login.css">
+    <link rel="stylesheet" href="styles/shared.css" />
+    <link rel="stylesheet" href="styles/login.css" />
+    <link rel="stylesheet" href="styles/index.css" />
+    
   </head>
   <body>
-
+    <div class="container-form">
+      <div class="left-col">
+        <img src="./images/side-image.png" alt="side-image" />
+      </div>
+      <div class="right-col">
+        <h1>Log in To Exclusive</h1>
+        <h5>Enter Your Details Below</h5>
+        <form>
+          <input
+            type="text"
+            id="email"
+            class="email"
+            placeholder="Email or Phone Number"
+          />
+          <input
+            type="password"
+            id="password"
+            class="password"
+            placeholder="Password"
+          />
+          <button class="loginBtn" id="loginBtn" disabled>Log In</button>
+          <a href="#">Forgot Password ?</a>
+        </form>
+      </div>
+    </div>
+    <script src="login.js"></script>
   </body>
 </html>
