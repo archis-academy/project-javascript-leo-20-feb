@@ -49,9 +49,12 @@ loginBtn.addEventListener("click", (e) => {
   if (user) {
     if (user.role === "admin") {
       alert(`${user.username} Admin Giriş Başarılı.`);
+      localStorage.setItem("isUserLogin", true);
+      localStorage.setItem("userRole" , "admin");
     } else {
       alert(`${user.username} User Giriş Başarılı.`);
       localStorage.setItem("isUserLogin", true);
+      localStorage.setItem("userRole" , "user");
     }
   } else {
     alert(`Kullanıcı adı veye şifre yanlış`);

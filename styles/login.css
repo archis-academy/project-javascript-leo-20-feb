@@ -4,12 +4,27 @@ body {
 }
 .container-form {
   display: flex;
+  
+}
+
+.left-col{
+  flex: 1;
+}
+.left-col img{
+  width: 100%;
 }
 
 .right-col {
-  text-align: left;
+  flex: 1;
+  display: flex;
+  justify-content: center;
   align-items: center;
-  margin: auto 300px;
+  flex-direction: column;
+  border: 2px solid black;
+}
+.right-col h1,
+.right-col h5{
+  text-align: left;
 }
 
 .right-col input{
@@ -39,6 +54,9 @@ body {
 .right-col button:disabled{
     background-color: gray;
 
+}
+.right-col .buttons{
+  justify-content: space-between;
 }
 
 
