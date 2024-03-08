@@ -51,10 +51,12 @@ loginBtn.addEventListener("click", (e) => {
       alert(`${user.username} Admin Giriş Başarılı.`);
       localStorage.setItem("isUserLogin", true);
       localStorage.setItem("userRole" , "admin");
+      location.href = "index.html";
     } else {
       alert(`${user.username} User Giriş Başarılı.`);
       localStorage.setItem("isUserLogin", true);
       localStorage.setItem("userRole" , "user");
+      location.href = "index.html";
     }
   } else {
     alert(`Kullanıcı adı veye şifre yanlış`);
