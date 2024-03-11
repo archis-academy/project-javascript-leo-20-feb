@@ -16,12 +16,12 @@
             Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!
             <a href="#"> ShopNow</a>
           </p>
-          <p class="header-language">
-            English
-            <button>
-              <img src="images/DropDown.png" alt="dropdown-icon" />
-            </button>
-          </p>
+
+          <div class="header-language">
+            <select id="select-btn">
+              <option id="value1" value="value1"></option>
+            </select>
+          </div>
         </div>
       </div>
       <div class="hr-container">
@@ -29,23 +29,30 @@
           <strong>Exclusive</strong>
           <nav class="header-navbar">
             <ul>
-              <li><a href="#">Home</a></li>
+              <li><a href="index.html">Home</a></li>
               <li><a href="#">Contact</a></li>
               <li><a href="#">About</a></li>
-              <li><a href="#">Sign Up</a></li>
+              <li><a href="login.html">Sign Up</a></li>
             </ul>
           </nav>
           <div class="top-search-section">
-            <input type="search" placeholder="What are you looking for?" />
-            <img
-              id="header-search-icon"
-              src="images/search-icon.svg"
-              alt="search-icon"
-            />
-            <a href="#"
+            <div class="search-container">
+              <div class="searchbar">
+                <input type="type" placeholder="What are you looking for?" />
+                <img
+                  id="header-search-icon"
+                  src="images/search-icon.svg"
+                  alt="search-icon"
+                />
+              </div>
+              <div id="product-list"></div>
+            </div>
+            <a href="wishlist.html"
               ><img src="images/wishlist-icon.svg" alt="wishlist-icon"
             /></a>
-            <a href="#"><img src="images/Cart1.png" alt="cart-icon" /></a>
+            <a href="cart.html"
+              ><img src="images/Cart1.png" alt="cart-icon"
+            /></a>
           </div>
         </div>
       </div>
@@ -54,14 +61,16 @@
         <aside>
           <nav class="header-aside-menu">
             <ul>
-              <li class="fashion-links">
+              <li class="fashion-links woman-element">
                 <a href="#">Woman's Fashion</a
                 ><a href="#"><img src="images/Vector-3.png" /></a>
               </li>
-              <li class="fashion-links">
+
+              <li class="fashion-links men-element">
                 <a href="#">Men's Fashion</a
                 ><a href="#"><img src="images/Vector-3.png" /></a>
               </li>
+
               <li><a href="#">Electronics</a></li>
               <li><a href="#">Home & Lifestyle</a></li>
               <li><a href="#">Medicine</a></li>
@@ -92,6 +101,13 @@
               src="images/iphone-pink.png"
               alt="iphone-image"
             />
+            <div class="dots">
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+            </div>
           </div>
         </section>
       </div>
