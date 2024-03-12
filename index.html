@@ -4,10 +4,61 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Exclusive E-Commerce</title>
-    <link rel="stylesheet" href="styles/shared.css">
-    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="styles/shared.css" />
+    <link rel="stylesheet" href="styles/index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
+    <!-- Yüsra PR-2 Homepage Today's Products -->
+    <div class="todays-products-container">
+      <div class="todays-products-title-container">
+        <div class="title-rectangle"></div>
+        <h1 class="todays-products-title">Today's</h1>
+      </div>
+
+      <div class="flash-sales-container">
+        <h2 class="flash-sales-title">Flash Sales</h2>
+        <div class="flash-sales-counter-container">
+          <div class="flash-sales-counter-days">
+            <p class="counter-info">Days</p>
+            <p class="flash-sales-counter" id="counter-days">03 :</p>
+          </div>
+          <div class="flash-sales-counter-days">
+            <p class="counter-info">Hours</p>
+            <p class="flash-sales-counter" id="counter-hours">23 :</p>
+          </div>
+          <div class="flash-sales-counter-days">
+            <p class="counter-info">Minutes</p>
+            <p class="flash-sales-counter" id="counter-minutes">19 :</p>
+          </div>
+          <div class="flash-sales-counter-days">
+            <p class="counter-info">Seconds</p>
+            <p class="flash-sales-counter" id="counter-seconds">56</p>
+          </div>
+        </div>
+        <div class="btn-container">
+          <button class="prev-btn" onclick="prevProduct()"><</button>
+          <button class="next-btn" onclick="nextProduct()">></button>
+        </div>
+      </div>
+
+      <div class="carousel-container">
+        <div class="product-carousel" id="productCarousel"></div>
+      </div>
+      <div class="view-all-btn-container">
+        <button class="view-all-btn">View All Products</button>
+      </div>
+    </div>
+
     <script src="app.js"></script>
   </body>
 </html>
