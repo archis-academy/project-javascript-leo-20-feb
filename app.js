@@ -31,7 +31,7 @@ searchInput.addEventListener("input", async function () {
 
   const response = await fetch("https://fakestoreapi.com/products");
   const dataProducts = await response.json();
-
+  console.log(dataProducts);
   const filteredProducts = dataProducts.filter((product) =>
     product.title.toLowerCase().includes(inputValue)
   );
@@ -51,6 +51,54 @@ searchInput.addEventListener("input", async function () {
 });
 
 //Searchbar end
+
+//Woman-Men Pop-up start
+const menLink = document.querySelector(".men-element");
+const womanLink = document.querySelector(".woman-element");
+const menPopup = document.createElement("ul");
+const womanPopup = document.createElement("ul");
+
+async function getMenProducts() {
+  const response = await fetch("https://fakestoreapi.com/products");
+  const dataProducts = await response.json();
+
+  const menProducts = dataProducts.filter(
+    (product) => product.category === "men's clothing"
+  );
+  menLink.appendChild(menPopup);
+  menPopup.classList.add("men-popup");
+  menPopup.innerHTML = menProducts
+    .map((item) => `<li>${item.title}</li>`)
+    .join("");
+}
+
+menLink.addEventListener("mouseenter", function () {
+  getMenProducts();
+});
+menLink.addEventListener("mouseleave", function () {
+  menLink.removeChild(menPopup);
+});
+
+async function getWomanProducts() {
+  const response = await fetch("https://fakestoreapi.com/products");
+  const dataProducts = await response.json();
+  const womanProducts = dataProducts.filter(
+    (product) => product.category === "women's clothing"
+  );
+  womanLink.appendChild(womanPopup);
+  womanPopup.classList.add("woman-popup");
+  womanPopup.innerHTML = womanProducts
+    .map((item) => `<li>${item.title}</li>`)
+    .join("");
+}
+
+womanLink.addEventListener("mouseenter", function () {
+  getWomanProducts();
+});
+womanLink.addEventListener("mouseleave", function () {
+  womanLink.removeChild(womanPopup);
+});
+//Woman-Men Pop-up end
 
 //Slider start
 
