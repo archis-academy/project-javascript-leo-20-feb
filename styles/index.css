@@ -73,6 +73,16 @@ header a {
   font-family: "Inter", sans-serif;
   font-size: 24px;
 }
+.header-logo-container {
+  display: flex;
+  align-items: center;
+}
+#menuBtn {
+  display: none;
+}
+.active-link {
+  border-bottom: 1px solid black;
+}
 .header-navbar ul {
   display: flex;
   list-style-type: none;
@@ -192,7 +202,6 @@ header a {
   width: 100%;
 }
 .my-slides {
-  display: none;
   height: 100%;
 }
 .my-slides > img {
@@ -268,3 +277,143 @@ header a {
 /* Section end*/
 /* Header-as-container end */
 /* Sebile/End of Homepage-Header */
+
+@media (max-width: 970px) {
+  .header-as-container aside {
+    display: none;
+  }
+  .header-as-container section {
+    padding: 0;
+    width: 100%;
+  }
+}
+@media (max-width: 880px) {
+  .header-top-navbar {
+    margin-top: 15px;
+  }
+  .iphone-title-container {
+    padding: 25px;
+  }
+  .iphone-title-container h1 {
+    font-size: 40px;
+  }
+  .header-navbar ul {
+    gap: 20px;
+  }
+}
+@media (max-width: 775px) {
+  header {
+    font-size: 13px;
+  }
+  .top-header {
+    font-size: inherit;
+  }
+  #header-iphone-image {
+    width: 350px;
+  }
+  .header-navbar ul {
+    gap: 15px;
+  }
+  .header-top-navbar strong {
+    font-size: 23px;
+  }
+  .searchbar input {
+    width: 185px;
+    padding: 10px;
+  }
+}
+@media (max-width: 670px) {
+  .summer-sale-title span {
+    display: none;
+  }
+  .header-navbar {
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 180px;
+    background-color: rgba(0, 0, 0, 0.259);
+    backdrop-filter: blur(40px);
+    color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(-100%);
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .show-navbar {
+    transform: translateX(0);
+  }
+
+  #menuBtn {
+    display: inline-block;
+  }
+
+  .header-navbar ul {
+    flex-direction: column;
+    gap: 20px;
+  }
+  #header-iphone-image {
+    width: 280px;
+    height: 280px;
+  }
+  .iphone-title-container {
+    padding: 15px;
+  }
+}
+@media (max-width: 540px) {
+  .iphone-title-container h1 {
+    font-size: 25px;
+    margin-bottom: 15px;
+  }
+  .top-header {
+    padding: 5px 0;
+  }
+  .header-top-navbar {
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+  .header-navbar {
+    width: 120px;
+  }
+  .header-top-navbar strong {
+    font-size: 17px;
+  }
+  .iphone-14-title {
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+  .iphone-14-title img {
+    width: 20px;
+  }
+  .header-vector-4 {
+    width: 15px;
+  }
+  #header-iphone-image {
+    width: 150px;
+    height: 170px;
+  }
+  .dot {
+    width: 8px;
+    height: 8px;
+  }
+
+  .top-header {
+    font-size: 10px;
+    text-align: center;
+  }
+  #select-btn {
+    font-size: 12px;
+    padding: 3px;
+  }
+  #header-iphone-image {
+    width: 50%;
+    margin-right: -50px;
+  }
+  .searchbar input {
+    width: 140px;
+    font-size: 10px;
+  }
+}
