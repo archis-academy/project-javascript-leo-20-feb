@@ -48,7 +48,6 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.3);
 }
 .category-box {
-  width: 200px;
   height: 175px;
   border: 1px solid rgba(0, 0, 0, 0.3);
   display: flex;
@@ -71,4 +70,38 @@
 .category-box p {
   margin: 0 auto;
 }
+@media (max-width: 655px) {
+  .category-boxes {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+  }
+  .category-box {
+    height: 150px;
+  }
+}
+@media (max-width: 505px) {
+  .category-box {
+    height: 120px;
+  }
+  .move-to-left-icon,
+  .move-to-right-icon {
+    width: 40px;
+  }
+  .browse-by-title h2 {
+    font-size: 30px;
+  }
+  .browse-by-title {
+    margin-bottom: 25px;
+  }
+}
+@media (max-width: 460px) {
+  .move-to-left-icon,
+  .move-to-right-icon {
+    width: 30px;
+  }
+  .browse-by-title h2 {
+    font-size: 25px;
+  }
+}
+
 /* Sebile/PR-3 End of browse by category */
