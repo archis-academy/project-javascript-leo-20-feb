@@ -27,9 +27,16 @@ menuBtn.addEventListener("click", () => {
   headerNavbar.classList.toggle("show-navbar");
 });
 
-headerNavbar.addEventListener("click", () => {
-  headerNavbar.classList.toggle("show-navbar");
+document.addEventListener("click", (event) => {
+  if (
+    !event.target.closest(".header-navbar") &&
+    !event.target.closest("#menuBtn")
+  ) {
+    headerNavbar.classList.remove("show-navbar");
+  }
 });
+
+//Responsive Navbar end
 
 let allProducts = [];
 async function getProducts() {
@@ -43,7 +50,7 @@ async function getProducts() {
 }
 
 getProducts();
-//Responsive Navbar end
+
 //Searchbar start
 const searchIcon = document.querySelector("#header-search-icon");
 const searchInput = document.querySelector(".searchbar input");
