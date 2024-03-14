@@ -20,6 +20,7 @@ selectBtn.addEventListener("click", () => {
   );
 });
 // Language end
+
 let allProducts = [];
 async function getProducts() {
   try {
