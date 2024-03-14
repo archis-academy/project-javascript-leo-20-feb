@@ -138,6 +138,7 @@
   .header-as-container section {
     padding: 0;
     width: 100%;
+    height: 400px;
   }
 }
 @media (max-width: 880px) {
@@ -149,11 +150,17 @@
   }
 }
 @media (max-width: 775px) {
+  .header-as-container section {
+    height: 350px;
+  }
   #header-iphone-image {
     width: 350px;
   }
 }
 @media (max-width: 670px) {
+  .header-as-container section {
+    height: 300px;
+  }
   #header-iphone-image {
     width: 280px;
     height: 280px;
@@ -163,6 +170,9 @@
   }
 }
 @media (max-width: 540px) {
+  .header-as-container section {
+    height: 250px;
+  }
   .iphone-title-container h1 {
     font-size: 25px;
     margin-bottom: 15px;
@@ -189,5 +199,11 @@
   #header-iphone-image {
     width: 50%;
     margin-right: -50px;
+  }
+}
+
+@media (max-width: 460px) {
+  .header-as-container section {
+    height: 200px;
   }
 }

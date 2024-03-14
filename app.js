@@ -20,6 +20,23 @@ selectBtn.addEventListener("click", () => {
   );
 });
 // Language end
+//Responsive Navbar start
+const menuBtn = document.querySelector("#menuBtn");
+const headerNavbar = document.querySelector(".header-navbar");
+menuBtn.addEventListener("click", () => {
+  headerNavbar.classList.toggle("show-navbar");
+});
+
+document.addEventListener("click", (event) => {
+  if (
+    !event.target.closest(".header-navbar") &&
+    !event.target.closest("#menuBtn")
+  ) {
+    headerNavbar.classList.remove("show-navbar");
+  }
+});
+
+//Responsive Navbar end
 
 let allProducts = [];
 async function getProducts() {
@@ -124,15 +141,16 @@ carouselDots.forEach((dot, index) => {
   });
 });
 
-const menuBtn = document.querySelector("#menuBtn");
-const headerNavbar = document.querySelector(".header-navbar");
-menuBtn.addEventListener("click", () => {
-  headerNavbar.classList.toggle("show-navbar");
-});
-
-headerNavbar.addEventListener("click", () => {
-  headerNavbar.classList.toggle("show-navbar");
-});
+setInterval(() => {
+  let activeDotIndex = 0;
+  carouselDots.forEach((dot, index) => {
+    if (dot.classList.contains("active-dot")) {
+      activeDotIndex = index;
+    }
+  });
+  activeDotIndex = (activeDotIndex + 1) % carouselDots.length;
+  handleDotClick(activeDotIndex);
+}, 3000);
 //Carousel end
 
 //Sebile/End of Homepage-Header
