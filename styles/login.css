@@ -4,13 +4,12 @@ body {
 }
 .container-form {
   display: flex;
-  
 }
 
-.left-col{
+.left-col {
   flex: 1;
 }
-.left-col img{
+.left-col img {
   width: 100%;
 }
 
@@ -23,42 +22,47 @@ body {
 }
 
 .right-col h1,
-.right-col h5{
+.right-col h5 {
   text-align: left;
 }
 
-.right-col input{
-    display: block;
-    width: 100%;
-    height: 30px;
-    margin:50px 0 ;
-    border: none;
-    border-bottom: 1px solid gray;
+.right-col input {
+  display: block;
+  width: 100%;
+  height: 30px;
+  margin: 50px 0;
+  border: none;
+  border-bottom: 1px solid gray;
 }
 .right-col input:focus {
-    outline: none;
+  outline: none;
 }
 
-.right-col a{
-    margin-left: 100px;
-    color:#DB4444;
+.right-col a {
+  margin-left: 100px;
+  color: #db4444;
 }
-.right-col button{
-    height: 40px;
-    width: 100px;
-    background-color: #DB4444;
-    color: white;
-    border: none;
-    border-radius: 5px;
+.right-col button {
+  height: 40px;
+  width: 100px;
+  background-color: #db4444;
+  color: white;
+  border: none;
+  border-radius: 5px;
 }
-.right-col button:disabled{
-    background-color: gray;
-
+.right-col button:disabled {
+  background-color: gray;
 }
-.right-col .buttons{
+.right-col .buttons {
   justify-content: space-between;
 }
 
 
-
-
+@media (max-width: 900px){
+  .container-form{
+    flex-direction: column;
+  }
+  .right-col{
+    margin: 20px 0;
+  }
+}

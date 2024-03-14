@@ -1,0 +1,116 @@
+/* ======= FOOTER START ======= */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  max-width: 1300px;
+  margin: auto;
+}
+ul {
+  list-style: none;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+.footer {
+  background-color: black;
+  color: white;
+  padding: 70px 0;
+}
+.footer-col {
+  width: 20%;
+  padding: 0 15px;
+}
+.footer-col h4 {
+  font-size: 24px;
+  text-transform: capitalize;
+  margin-bottom: 30px;
+  font-weight: 500;
+  position: relative;
+}
+.footer-col p {
+  font-size: 14px;
+}
+.footer-col ul li:not(:last-child) {
+  margin-bottom: 10px;
+}
+.footer-col ul li a {
+  font-size: 16px;
+  text-transform: capitalize;
+  color: white;
+  text-decoration: none;
+  font-weight: 300;
+  display: block;
+  transition: all 0.3s ease;
+}
+.footer-col ul li a:hover {
+  color: white;
+  padding-left: 8px;
+}
+.footer-col input {
+  line-height: 40px;
+  border: none;
+  background-color: transparent;
+  color: white;
+}
+.footer-col input:focus {
+  outline: none;
+}
+.send-items {
+  display: flex;
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 0 10px;
+  justify-content: space-between;
+}
+.social-links p {
+  font-size: 12px;
+  padding-bottom: 10px;
+  opacity: 70%;
+}
+.app-links {
+  display: flex;
+  margin-bottom: 20px;
+}
+.app-links img {
+  display: block;
+  margin-right: 10px;
+}
+.social-media-links a {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  margin-right: 10px;
+  text-align: center;
+  line-height: 40px;
+}
+.copyright {
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 10px;
+  margin-bottom: -60px;
+  border-top: 0.5px solid #4a4a4a;
+  color: #4a4a4a;
+}
+/* Responsive */
+@media (max-width: 767px) {
+  .footer-col {
+    width: 50%;
+    margin-bottom: 30px;
+  }
+}
+@media (max-width: 574px) {
+  .footer-col {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+}
+/* ======= FOOTER END ======= */
