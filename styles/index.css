@@ -207,6 +207,113 @@
   }
 }
 /* Sebile/End of Homepage-Header */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap");
+/* Sebile/PR-3 Beginning of browse by category */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.browse-by-container {
+  font-family: "Poppins", sans-serif;
+  max-width: 1300px;
+  margin: 30px auto 0 auto;
+}
+.categories-title {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: #db4444;
+}
+.categories-title h3 {
+  font-weight: 500;
+}
+.red-box {
+  width: 20px;
+  height: 40px;
+  background-color: #db4444;
+  border-radius: 4px;
+}
+.browse-by-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 30px 0 70px 0;
+}
+.browse-by-title h2 {
+  font-weight: 500;
+  font-size: 35px;
+}
+.move-to-left-icon:hover,
+.move-to-right-icon:hover {
+  filter: invert(15%);
+}
+.category-boxes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  padding-bottom: 80px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+.category-box {
+  height: 175px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  transition: transform 0.5s ease;
+}
+.category-box:hover {
+  background-color: #db4444;
+  transform: scale(1.1);
+  color: white;
+  box-shadow: 0 29px 52px rgba(0, 0, 0, 0.4), 0 25px 16px rgba(0, 0, 0, 0.2);
+}
+.category-box:hover img {
+  filter: invert(100%);
+}
+.category-box p {
+  margin: 0 auto;
+}
+@media (max-width: 655px) {
+  .category-boxes {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+  }
+  .category-box {
+    height: 150px;
+  }
+}
+@media (max-width: 505px) {
+  .category-box {
+    height: 120px;
+  }
+  .move-to-left-icon,
+  .move-to-right-icon {
+    width: 40px;
+  }
+  .browse-by-title h2 {
+    font-size: 30px;
+  }
+  .browse-by-title {
+    margin-bottom: 25px;
+  }
+}
+@media (max-width: 460px) {
+  .move-to-left-icon,
+  .move-to-right-icon {
+    width: 30px;
+  }
+  .browse-by-title h2 {
+    font-size: 25px;
+  }
+}
+
+/* Sebile/PR-3 End of browse by category */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 body {
   font-family: "Poppins", sans-serif;
