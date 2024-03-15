@@ -22,7 +22,9 @@ function showProducts() {
                     <img class ="product-card-img" src ="${
                       product.image
                     }" alt = "${product.title}" />
-                    <button class="add-to-cart-btn" id="addToCartBtn">Add To Cart</button>
+                    <button onclick="addToCart(${
+                      product.id
+                    })" class="add-to-cart-btn" >Add To Cart</button>
                     <p class = "discount-rate">-50%</p>
                     <h3 class ="product-title">${product.title}</h3>
                     <div class="product-prices-container">
@@ -31,7 +33,8 @@ function showProducts() {
                         }</p>
                         <s class ="product-price"> $${product.price}</s>
                      </div>
-                    <p>${product.rating.rate} (${product.rating.count})</p>
+                    <p>${getStars(product.rating.rate)} (${product.rating.count})</p>
+                     
     
                     <div class="product-card-icons">
                         <img onclick="addToWishlist(${
@@ -45,6 +48,14 @@ function showProducts() {
                 </div>`;
     })
     .join("");
+    
+}
+function getStars(rating) {
+    let stars = ``;
+    for (let i = 0; i < rating.toFixed(0); i++) {
+        stars += `<img src="images/one-star.png" />`;
+    }
+    return stars;
 }
 
 getProducts();
@@ -129,7 +140,9 @@ function showAllProducts() {
                     <img class ="product-card-img" src ="${
                       product.image
                     }" alt = "${product.title}" />
-                    <button class="add-to-cart-btn" id="addToCartBtn">Add To Cart</button>
+                    <button onclick="addToCart(${
+                      product.id
+                    })" class="add-to-cart-btn" >Add To Cart</button>
                     <p class = "discount-rate">-50%</p>
                     <h3 class ="product-title">${product.title}</h3>
                     <div class="product-prices-container">
