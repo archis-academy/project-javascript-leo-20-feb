@@ -1,3 +1,9 @@
+const userLogin = JSON.parse(localStorage.getItem("isUserLogin")) || false;
+
+if (!userLogin) {
+  window.location.href = "login.html";
+}
+
 //Sebile/Beginning of Homepage-Header
 // Language start
 const languages = [
@@ -154,12 +160,6 @@ setInterval(() => {
 //Carousel end
 
 //Sebile/End of Homepage-Header
-
-const userLogin = JSON.parse(localStorage.getItem("isUserLogin")) || false;
-
-if (!userLogin) {
-  window.location.href = "login.html";
-}
 
 // Sebile/PR-3 Beginning of browse by category
 const categoryContents = [
