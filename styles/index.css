@@ -48,11 +48,9 @@
 
 .best-selling-card {
   position: relative;
-  border: 2px solid red;
 }
 
 .image-photo {
-  background-color: beige;
   width: 200px;
   padding: 50px;
 }
@@ -82,8 +80,72 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 100px;
+  margin-top: 40px;
+}
+
+.best-products {
+  position: relative;
 }
 
 .best-products > img {
+  width: 100%;
   height: 300px;
+}
+
+.best-products-title {
+  height: 60px;
+}
+
+.best-products-price {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  font-weight: 500;
+}
+
+.best-products-price p {
+  color: #db4444;
+}
+
+.best-products-price s {
+  color: #7d8184;
+}
+
+.best-products-rate {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  color: #7d8184;
+  font-weight: 500;
+}
+
+.wishlist-and-cart {
+  display: flex;
+  flex-direction: column;
+  width: 30px;
+  position: absolute;
+  right: -35px;
+  top: -8px;
+  cursor: pointer;
+}
+
+.wishlist-img:hover {
+  width: 35px;
+}
+
+.cart-img:hover {
+  width: 35px;
+}
+
+.sale-price {
+  position: absolute;
+  background-color: red;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  font-size: 14px;
+  padding: 0 5px;
+  top: 0;
 }
