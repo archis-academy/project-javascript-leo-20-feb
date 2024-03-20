@@ -1,61 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Exclusive E-Commerce</title>
-    <link rel="stylesheet" href="styles/shared.css" />
-    <link rel="stylesheet" href="styles/index.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
-    />
-  </head>
-  <body>
-    <!-- Yüsra PR-2 Homepage Today's Products -->
-    <div class="todays-products-container">
-      <div class="todays-products-title-container">
-        <div class="title-rectangle"></div>
-        <h1 class="todays-products-title">Today's</h1>
-      </div>
 
-      <div class="flash-sales-container">
-        <h2 class="flash-sales-title">Flash Sales</h2>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exclusive E-Commerce</title>
+  <link rel="stylesheet" href="styles/shared.css" />
+  <link rel="stylesheet" href="styles/index.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
 
-        <div class="btn-container">
-          <img
-            class="prev-btn"
-            onclick="prevProduct()"
-            src="images/icons-left-arrow.svg"
-            alt="left-arrow"
-          />
-          <img
-            class="next-btn"
-            onclick="nextProduct()"
-            src="images/icons-right-arrow.svg"
-            alt="right-arrow"
-          />
-        </div>
-      </div>
+<body>
+  <!-- Yüsra PR-2 Homepage Today's Products -->
+  <div class="todays-products-container">
+    <div class="todays-products-title-container">
+      <div class="title-rectangle"></div>
+      <h1 class="todays-products-title">Today's</h1>
+    </div>
 
-      <div class="carousel-container">
-        <div class="product-carousel" id="productCarousel"></div>
-      </div>
-      <div class="view-all-btn-container">
-        <button class="view-all-btn" id="viewAllBtn">View All Products</button>
+    <div class="flash-sales-container">
+      <h2 class="flash-sales-title">Flash Sales</h2>
+
+      <div class="btn-container">
+        <img class="prev-btn" onclick="prevProduct()" src="images/icons-left-arrow.svg" alt="left-arrow" />
+        <img class="next-btn" onclick="nextProduct()" src="images/icons-right-arrow.svg" alt="right-arrow" />
       </div>
     </div>
- <!-- Yüsra PR-2 Homepage Today's Products End -->
-    <script src="app.js"></script>
-  </body>
+
+    <div class="carousel-container">
+      <div class="product-carousel" id="productCarousel"></div>
+    </div>
+    <div class="view-all-btn-container">
+      <button class="view-all-btn" id="viewAllBtn">View All Products</button>
+    </div>
+  </div>
+  <!-- Yüsra PR-2 Homepage Today's Products End -->
+  <script src="app.js"></script>
+</body>
+
 </html>

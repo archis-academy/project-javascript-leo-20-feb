@@ -53,7 +53,6 @@ function showProducts() {
 
   setHeartIcons();
   setCartIcons();
-
 }
 function getStars(rating) {
   let stars = ``;
@@ -62,7 +61,6 @@ function getStars(rating) {
   }
   return stars;
 }
-
 
 function addToWishlist(productId) {
   const heartIcon = document.getElementById(`heartIcon${productId}`);
@@ -193,15 +191,15 @@ function setHeartIcons() {
   const wishlistProducts =
     JSON.parse(localStorage.getItem("wishlistProducts")) || [];
   wishlistProducts.forEach((product) => {
-    if (product.id) { // product.id tanımlı mı diye kontrol et
+    if (product.id) {
+      // product.id tanımlı mı diye kontrol et
       const heartIcon = document.getElementById(`heartIcon${product.id}`);
-      if (heartIcon) { // heartIcon null değil mi diye kontrol et
+      if (heartIcon) {
+        // heartIcon null değil mi diye kontrol et
         heartIcon.style.fill = "red";
         heartIcon.style.stroke = "red";
       }
     }
-
-
   });
 }
 function setCartIcons() {
@@ -213,7 +211,5 @@ function setCartIcons() {
         cartIcon.setAttribute("src", "images/check-icon.svg");
       }
     }
-
-
   });
 }
