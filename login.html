@@ -4,10 +4,173 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Exclusive E-Commerce Login</title>
-    <link rel="stylesheet" href="styles/shared.css">
-    <link rel="stylesheet" href="styles/login.css">
+    <link rel="stylesheet" href="styles/shared.css" />
+    <link rel="stylesheet" href="styles/login.css" />
   </head>
   <body>
+    <header>
+      <div class="top-header-container">
+        <div class="top-header">
+          <p class="summer-sale-title">
+            Summer Sale
+            <span>For All Swim Suits And Free Express Delivery</span>- OFF 50%!
+            <a href="#"> ShopNow</a>
+          </p>
 
+          <div class="header-language">
+            <select id="select-btn">
+              <option id="value1" value="value1"></option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="hr-container">
+        <div class="header-top-navbar">
+          <div class="header-logo-container">
+            <img
+              id="menuBtn"
+              src="images/menu_FILL0_wght400_GRAD0_opsz24.png"
+              alt=""
+            />
+            <strong>Exclusive</strong>
+          </div>
+          <nav class="header-navbar">
+            <ul>
+              <li>
+                <a id="target-1" href="index.html">Home</a>
+              </li>
+              <li><a id="target-2" href="#">Contact</a></li>
+              <li><a id="target-3" href="#">About</a></li>
+              <li><a id="target-4" href="login.html">Sign Up</a></li>
+            </ul>
+          </nav>
+          <div class="top-search-section">
+            <div class="search-container">
+              <div class="searchbar">
+                <input type="type" placeholder="What are you looking for?" />
+                <img
+                  id="header-search-icon"
+                  src="images/search-icon.svg"
+                  alt="search-icon"
+                />
+              </div>
+              <div id="product-list"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="container-form">
+      <div class="left-col">
+        <img src="./images/side-image.png" alt="side-image" />
+      </div>
+      <div class="right-col">
+        <form>
+          <h1>Log in To Exclusive</h1>
+          <h5>Enter Your Details Below</h5>
+          <input
+            type="text"
+            id="email"
+            class="email"
+            placeholder="Email or Phone Number"
+          />
+          <input
+            type="password"
+            id="password"
+            class="password"
+            placeholder="Password"
+          />
+          <div class="buttons">
+            <button class="loginBtn" id="loginBtn" disabled>Log In</button>
+            <a href="#">Forgot Password ?</a>
+          </div>
+        </form>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="footer-col">
+            <h4>Exclusive</h4>
+            <ul>
+              <li>Subscribe</li>
+              <li><p>Get %10 off your first order</p></li>
+              <li>
+                <div class="send-items">
+                  <input type="text" placeholder="Enter Your E-Mail" />
+                  <img src="images/icon-send.svg" alt="" />
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Support</h4>
+            <ul>
+              <li><p>111 Bijoy sarani, Dhaka, DH 1515, Bangladesh</p></li>
+              <li><p>exclusive@gmail.com</p></li>
+              <li><p>+90555-555-55-55</p></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Account</h4>
+            <ul>
+              <li><a href="#">My Account</a></li>
+              <li><a href="#">Login / Register</a></li>
+              <li><a href="#">Cart</a></li>
+              <li><a href="#">Wishlist</a></li>
+              <li><a href="#">Shop</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Quick Link</h4>
+            <ul>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms Of Use</a></li>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Download App</h4>
+            <div class="social-links">
+              <p>Save $3 with App New User Only</p>
+              <div class="app-links">
+                <img src="./images/qr-code.png" alt="qr-code" />
+                <div class="download-links">
+                  <a href="#"
+                    ><img
+                      src="./images/badge-google-play.svg"
+                      alt="badge-google-play"
+                  /></a>
+                  <a href="#"
+                    ><img
+                      src="./images/badge-app-store.svg"
+                      alt="badge-app-store"
+                  /></a>
+                </div>
+              </div>
+              <div class="social-media-links">
+                <a href="#"
+                  ><img src="./images/icon-facebook.svg" alt="icon-facebook"
+                /></a>
+                <a href="#"
+                  ><img src="./images/icon-twitter.svg" alt="icon-twitter"
+                /></a>
+                <a href="#"
+                  ><img src="./images/icon-instagram.svg" alt="icon-instagram"
+                /></a>
+                <a href="#"
+                  ><img src="./images/icon-linkedin.svg" alt="icon-linkedin"
+                /></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>© Copyright Archi's 2024. All right reserved.</p>
+      </div>
+    </footer>
+    <script src="login.js"></script>
   </body>
 </html>

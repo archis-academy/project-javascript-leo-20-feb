@@ -1,3 +1,248 @@
+/* Header-as-container start */
+.header-as-container {
+  display: flex;
+  max-width: 1300px;
+  margin: 0 auto;
+  max-height: 410px;
+}
+
+/* Aside start*/
+.header-as-container aside {
+  padding-top: 35px;
+  padding-right: 20px;
+  width: 20%;
+  height: 100%;
+  border-right: 1.5px solid #c1c0c0;
+}
+
+.header-as-container aside nav>ul {
+  display: flex;
+  flex-direction: column;
+  gap: 19px;
+}
+
+.fashion-links {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.fashion-links li {
+  padding: 5px;
+}
+
+.woman-popup,
+.men-popup {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.259);
+  backdrop-filter: blur(40px);
+  margin-left: 240px;
+  margin-top: 11px;
+  min-width: 250px;
+  font-size: 13px;
+  z-index: 1;
+  color: #f5f5f5;
+  padding: 10px;
+}
+
+/* Aside end*/
+/* Section start*/
+.header-as-container section {
+  padding: 35px 0 0 35px;
+  width: 80%;
+  max-height: 100%;
+  position: relative;
+}
+
+.section-image-container {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.my-slides {
+  height: 100%;
+}
+
+.my-slides>img {
+  width: 100%;
+  height: 100%;
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.image-1-container {
+  display: flex;
+  background-color: #000000;
+  height: 100%;
+  width: 100%;
+}
+
+.iphone-title-container {
+  color: white;
+  width: 50%;
+  padding: 50px;
+}
+
+.iphone-14-title {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+.iphone-title-container h1 {
+  font-family: "Inter", sans-serif;
+  font-size: 55px;
+  margin-bottom: 35px;
+}
+
+.iphone-title-container a {
+  border-bottom: 1px solid white;
+  padding-bottom: 3px;
+}
+
+.header-vector-4 {
+  margin-bottom: -4px;
+  margin-left: 8px;
+}
+
+.dots {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: content-box;
+}
+
+.active-dot {
+  background-color: #db4444;
+  border: 2px solid white;
+}
+
+/* Section end*/
+/* Header-as-container end */
+
+@media (max-width: 970px) {
+  .header-as-container aside {
+    display: none;
+  }
+
+  .header-as-container section {
+    padding: 0;
+    width: 100%;
+    height: 400px;
+  }
+}
+
+@media (max-width: 880px) {
+  .iphone-title-container {
+    padding: 25px;
+  }
+
+  .iphone-title-container h1 {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 775px) {
+  .header-as-container section {
+    height: 350px;
+  }
+
+  #header-iphone-image {
+    width: 350px;
+  }
+}
+
+@media (max-width: 670px) {
+  .header-as-container section {
+    height: 300px;
+  }
+
+  #header-iphone-image {
+    width: 280px;
+    height: 280px;
+  }
+
+  .iphone-title-container {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 540px) {
+  .header-as-container section {
+    height: 250px;
+  }
+
+  .iphone-title-container h1 {
+    font-size: 25px;
+    margin-bottom: 15px;
+  }
+
+  .iphone-14-title {
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+
+  .iphone-14-title img {
+    width: 20px;
+  }
+
+  .header-vector-4 {
+    width: 15px;
+  }
+
+  #header-iphone-image {
+    width: 150px;
+    height: 170px;
+  }
+
+  .dot {
+    width: 8px;
+    height: 8px;
+  }
+
+  #header-iphone-image {
+    width: 50%;
+    margin-right: -50px;
+  }
+}
+
+@media (max-width: 460px) {
+  .header-as-container section {
+    height: 200px;
+  }
+}
+
+/* Sebile/End of Homepage-Header */
+
+/* Yüsra PR-2 Homepage Todays Products */
 .todays-products-container {
   max-width: 1300px;
   display: flex;
@@ -171,4 +416,259 @@
   top: 0px;
   left: 0px;
   position: absolute;
+}
+
+/* Yüsra PR-2 Homepage Todays Products End */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap");
+
+/* Sebile/PR-3 Beginning of browse by category */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.browse-by-container {
+  font-family: "Poppins", sans-serif;
+  max-width: 1300px;
+  margin: 30px auto 0 auto;
+}
+
+.categories-title {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: #db4444;
+}
+
+.categories-title h3 {
+  font-weight: 500;
+}
+
+.red-box {
+  width: 20px;
+  height: 40px;
+  background-color: #db4444;
+  border-radius: 4px;
+}
+
+.browse-by-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 30px 0 70px 0;
+}
+
+.browse-by-title h2 {
+  font-weight: 500;
+  font-size: 35px;
+}
+
+.move-to-left-icon:hover,
+.move-to-right-icon:hover {
+  filter: invert(15%);
+}
+
+.category-boxes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  padding-bottom: 80px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.category-box {
+  height: 175px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  transition: transform 0.5s ease;
+}
+
+.category-box:hover {
+  background-color: #db4444;
+  transform: scale(1.1);
+  color: white;
+  box-shadow: 0 29px 52px rgba(0, 0, 0, 0.4), 0 25px 16px rgba(0, 0, 0, 0.2);
+}
+
+.category-box:hover img {
+  filter: invert(100%);
+}
+
+.category-box p {
+  margin: 0 auto;
+}
+
+@media (max-width: 655px) {
+  .category-boxes {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+  }
+
+  .category-box {
+    height: 150px;
+  }
+}
+
+@media (max-width: 505px) {
+  .category-box {
+    height: 120px;
+  }
+
+  .move-to-left-icon,
+  .move-to-right-icon {
+    width: 40px;
+  }
+
+  .browse-by-title h2 {
+    font-size: 30px;
+  }
+
+  .browse-by-title {
+    margin-bottom: 25px;
+  }
+}
+
+@media (max-width: 460px) {
+
+  .move-to-left-icon,
+  .move-to-right-icon {
+    width: 30px;
+  }
+
+  .browse-by-title h2 {
+    font-size: 25px;
+  }
+}
+
+/* Sebile/PR-3 End of browse by category */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1350px;
+  margin: auto;
+}
+
+.featured {
+  display: flex;
+  align-items: center;
+  color: #db4444;
+}
+
+.featured p {
+  font-size: 16px;
+  font-weight: 600;
+  margin-left: 20px;
+}
+
+.title-new-arrival {
+  font-size: 36px;
+  font-weight: 600;
+  margin-top: 10px;
+  margin-bottom: 40px;
+}
+
+/*ARRIVALS*/
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.content img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.right-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.right-item .right-item-top {
+  display: flex;
+}
+
+.left-item {
+  flex: 1;
+  display: flex;
+}
+
+.right-item-bottom {
+  display: flex;
+  flex: 1;
+  gap: 20px;
+}
+
+.right-item-top,
+.right-item-bottom-left,
+.right-item-bottom-right {
+  flex: 1;
+}
+
+.left-item img {
+  min-width: 300px;
+}
+
+.right-item .right-item-top img {
+  min-width: 300px;
+}
+
+.right-item .right-item-bottom img {
+  min-width: 150px;
+}
+
+/*SERVICES*/
+.services {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 120px;
+  flex-wrap: wrap;
+}
+
+.services-items img {
+  padding: 5px;
+  background-color: black;
+  border-radius: 50%;
+}
+
+.services-items h1 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.services-items p {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.bg-img {
+  display: inline-block;
+  background: rgba(47, 46, 48, 0.3);
+  padding: 5px 5px 0 5px;
+  border-radius: 50%;
 }
