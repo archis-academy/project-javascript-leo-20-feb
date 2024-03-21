@@ -15,7 +15,7 @@
   border-right: 1.5px solid #c1c0c0;
 }
 
-.header-as-container aside nav>ul {
+.header-as-container aside nav > ul {
   display: flex;
   flex-direction: column;
   gap: 19px;
@@ -64,7 +64,7 @@
   height: 100%;
 }
 
-.my-slides>img {
+.my-slides > img {
   width: 100%;
   height: 100%;
 }
@@ -247,7 +247,7 @@
   max-width: 1300px;
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
+  margin: 50px auto;
 }
 
 .todays-products-title-container {
@@ -282,6 +282,7 @@
 .flash-sales-container {
   display: flex;
   justify-content: space-between;
+  margin: 20px 0;
 }
 
 .carousel-container {
@@ -536,7 +537,6 @@
 }
 
 @media (max-width: 460px) {
-
   .move-to-left-icon,
   .move-to-right-icon {
     width: 30px;
@@ -672,3 +672,157 @@ body {
   padding: 5px 5px 0 5px;
   border-radius: 50%;
 }
+/* MÜCAHİT BEST SELLING PRODUCTS START */
+.best-selling-products {
+  max-width: 1300px;
+  margin: 0 auto;
+  font-family: "Poppins", sans-serif;
+}
+
+.best-selling-title {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  color: #db4444;
+  font-size: 20px;
+}
+
+.best-selling-title img {
+  width: 20px;
+  height: 40px;
+}
+
+.best-selling-subtitle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.best-selling-subtitle h2 {
+  font-size: 40px;
+  font-weight: 600;
+}
+
+.best-selling-subtitle a {
+  display: flex;
+  width: 150px;
+  height: 60px;
+  background-color: #db4444;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.best-selling-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.best-selling-card {
+  position: relative;
+}
+
+.image-photo {
+  width: 200px;
+  padding: 50px;
+}
+
+.best-selling-price {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.best-selling-comment {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.icons {
+  position: absolute;
+  right: 10px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.best-products-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 100px;
+  margin-top: 40px;
+}
+
+.best-products {
+  position: relative;
+}
+
+.best-products > img {
+  width: 100%;
+  height: 300px;
+}
+
+.best-products-title {
+  height: 60px;
+}
+
+.best-products-price {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  font-weight: 500;
+}
+
+.best-products-price p {
+  color: #db4444;
+}
+
+.best-products-price s {
+  color: #7d8184;
+}
+
+.best-products-rate {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  color: #7d8184;
+  font-weight: 500;
+}
+
+.wishlist-and-cart {
+  display: flex;
+  flex-direction: column;
+  width: 30px;
+  position: absolute;
+  right: -35px;
+  top: -8px;
+  cursor: pointer;
+}
+
+.wishlist-img:hover {
+  width: 35px;
+}
+
+.cart-img:hover {
+  width: 35px;
+}
+
+.sale-price {
+  position: absolute;
+  background-color: red;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  font-size: 14px;
+  padding: 0 5px;
+  top: 0;
+}
+
+/* MÜCAHİT BEST SELLING PRODUCTS END */
