@@ -3,22 +3,37 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.navbar-section ul {
+  margin: 50px auto;
+  display: flex;
+  gap: 20px;
+  font-size: 14px;
+
+}
+
+.navbar-section ul li a:hover {
+  font-weight: bold;
+}
+
 .about-container {
   font-family: "Poppins", sans-serif;
   max-width: 1300px;
   margin: 0 auto;
 }
+
 .our-story-section {
   display: flex;
   align-items: center;
   gap: 50px;
 }
+
 .about-icons-section {
   display: flex;
   justify-content: space-around;
-
-  margin-top: 50px;
+  margin: 100px auto;
 }
+
 .icon-item {
   display: flex;
   flex-direction: column;
@@ -30,20 +45,24 @@
   align-items: center;
   gap: 15px;
 }
+
 .about-icons-section h3 {
   font-family: Inter;
   font-weight: 700;
   font-size: 32px;
 }
+
 .about-icons-section p {
   font-size: 16px;
 }
+
 .icon-item:hover {
   background-color: #db4444;
   transform: scale(1.1);
   color: white;
   box-shadow: 0 29px 52px rgba(0, 0, 0, 0.4), 0 25px 16px rgba(0, 0, 0, 0.2);
 }
+
 .icon-item:hover img {
   filter: invert(100%);
 }
