@@ -232,8 +232,27 @@ function getStars(rating) {
   return stars;
 }
 
-function addToWishlist(productId) {
-  const heartIcon = document.getElementById(`heartIcon${productId}`);
+function addToWishlist(productId, iconState) {
+  // if (iconState === "bestSelling") {
+  //   heartIcon = document.getElementById(`heartIconBestSelling${productId}`);
+  // } else {
+  //   heartIcon = document.getElementById(`heartIcon${productId}`);
+  // }
+
+  const heartIconParameter =
+    iconState === "bestSelling"
+      ? `heartIconBestSelling${productId}`
+      : `heartIcon${productId}`;
+
+  const heartIcon = document.getElementById(heartIconParameter);
+
+  heartIcon.style.fill = "red";
+  heartIcon.style.stroke = "red";
+
+  // const heartIcon = document.getElementById(`heartIcon${productId}`);
+  // const heartIcon = document.getElementById(
+  //   `heartIconBestSelling${productId}`
+  // );
   heartIcon.style.fill = "red";
   heartIcon.style.stroke = "red";
 
@@ -250,15 +269,21 @@ function addToWishlist(productId) {
     );
     localStorage.setItem(
       "wishlistProducts",
-      JSON.stringify([...wishlistProducts, {...productToAdd, quantity: 1}])
+      JSON.stringify([...wishlistProducts, { ...productToAdd, quantity: 1 }])
     );
   } else {
-    deleteFromWishlist(productId);
+    deleteFromWishlist(productId, iconState);
   }
 }
 
-function deleteFromWishlist(deletedProductId) {
-  const heartIcon = document.getElementById(`heartIcon${deletedProductId}`);
+function deleteFromWishlist(deletedProductId, iconState) {
+  const heartIconParameter =
+    iconState === "bestSelling"
+      ? `heartIconBestSelling${deletedProductId}`
+      : `heartIcon${deletedProductId}`;
+
+  const heartIcon = document.getElementById(heartIconParameter);
+
   heartIcon.style.fill = "none";
   heartIcon.style.stroke = "black";
 
@@ -348,7 +373,7 @@ function showAllProducts() {
                     <div class="product-card-icons">
                         <svg onclick="addToWishlist(${
                           product.id
-                        })" width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        }, "flashProducts")" width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path id="heartIcon${
                             product.id
                           }" d="M11 7C8.239 7 6 9.216 6 11.95C6 14.157 6.875 19.395 15.488 24.69C15.6423 24.7839 15.8194 24.8335 16 24.8335C16.1806 24.8335 16.3577 24.7839 16.512 24.69C25.125 19.395 26 14.157 26 11.95C26 9.216 23.761 7 21 7C18.239 7 16 10 16 10C16 10 13.761 7 11 7Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -483,7 +508,6 @@ let discountPrice = (price, discount) =>
 
 function getBestSellingProducts() {
   const firstFourProducts = allProducts.slice(0, 4);
-  console.log(allProducts, "SON ALL PRODCUTS");
 
   bestProductsContainer.innerHTML = firstFourProducts
     .map((product) => {
@@ -501,9 +525,13 @@ function getBestSellingProducts() {
               <p>(${product.rating.count})</p>
               </div>
               <div class="wishlist-and-cart">
-              <img class="wishlist-img" onClick="addToWishlist(${
-                product.id
-              })" src="images/wishlist-icon.svg"/>
+               <svg onclick="addToWishlist(${
+                 product.id
+               }, 'bestSelling')" width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path id="heartIconBestSelling${
+                            product.id
+                          }" d="M11 7C8.239 7 6 9.216 6 11.95C6 14.157 6.875 19.395 15.488 24.69C15.6423 24.7839 15.8194 24.8335 16 24.8335C16.1806 24.8335 16.3577 24.7839 16.512 24.69C25.125 19.395 26 14.157 26 11.95C26 9.216 23.761 7 21 7C18.239 7 16 10 16 10C16 10 13.761 7 11 7Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
               <img class="cart-img" onClick="addToCart(${
                 product.id
               })" src="images/cart-icon.svg"/>
