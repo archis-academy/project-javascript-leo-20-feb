@@ -250,7 +250,7 @@ function addToWishlist(productId) {
     );
     localStorage.setItem(
       "wishlistProducts",
-      JSON.stringify([...wishlistProducts, productToAdd])
+      JSON.stringify([...wishlistProducts, {...productToAdd, quantity: 1}])
     );
   } else {
     deleteFromWishlist(productId);
