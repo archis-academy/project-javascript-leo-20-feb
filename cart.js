@@ -81,3 +81,148 @@ searchInput.addEventListener("keyup", (e) => {
 //Searchbar end
 
 //Sebile/End of Homepage-Header
+//Main start
+const productsTable = document.querySelector(".products-table");
+const subtotal = document.querySelector(".subtotal span");
+const updateBtn = document.querySelector(".update-btn");
+const couponInput = document.querySelector(".coupon-box input");
+const applyBtn = document.querySelector(".coupon-box button");
+
+console.log(updateBtn);
+const cartProductList = [
+  {
+    id: 1,
+    title: "gömlek",
+    image: "images/arrival1.png",
+    price: 100,
+    quantity: 2,
+  },
+  {
+    id: 2,
+    title: "gömlek",
+    image: "images/arrival2.png",
+    price: 100,
+    quantity: 2,
+  },
+  {
+    id: 3,
+    title: "gömlek",
+    image: "images/arrival3.png",
+    price: 100,
+    quantity: 2,
+  },
+];
+
+const coupons = [
+  {
+    id: 1,
+    kod: "YUZDE10",
+    discount: 10,
+  },
+  {
+    id: 2,
+    kod: "YUZDE20",
+    discount: 20,
+  },
+];
+
+localStorage.setItem("cartProducts", JSON.stringify(cartProductList));
+
+function renderCartProducts() {
+  const cartProducts = JSON.parse(localStorage.getItem("cartProducts")) || [];
+
+  productsTable.innerHTML = cartProducts
+    .map((product) => {
+      return `<tr><td><img src=${product.image}><p>${product.title}</p></td>
+    <td>${product.price}</td>
+    <td><span class="quantity-box">${
+      product.quantity
+    }<span ><img class="up-icon" onclick="incrementQuantity(${
+        product.id
+      })" src="images/angle-up-solid.svg"> <img class="down-icon" onclick="decrementQuantity(${
+        product.id
+      })" src="images/angle-down-solid.svg"> </span></span>
+    </td>
+    <td>${product.quantity * product.price}</td></tr>`;
+    })
+    .join("");
+}
+renderCartProducts();
+function incrementQuantity(productId) {
+  const cartProducts = JSON.parse(localStorage.getItem("cartProducts")) || [];
+  const updatedProducts = cartProducts.map((product) => {
+    if (product.id === productId) {
+      return { ...product, quantity: product.quantity + 1 };
+    }
+    return product;
+  });
+  localStorage.setItem("cartProducts", JSON.stringify(updatedProducts));
+  renderCartProducts();
+}
+
+function deleteFromCart(deletedProductId) {
+  const cartProducts = JSON.parse(localStorage.getItem("cartProducts")) || [];
+  const filteredProducts = cartProducts.filter(
+    (product) => product.id !== deletedProductId
+  );
+  localStorage.setItem("cartProducts", JSON.stringify(filteredProducts));
+  renderCartProducts();
+}
+
+function decrementQuantity(productId) {
+  const cartProducts = JSON.parse(localStorage.getItem("cartProducts")) || [];
+
+  const updatedProducts = cartProducts
+    .map((product) => {
+      if (productId === product.id) {
+        if (product.quantity > 1) {
+          return { ...product, quantity: product.quantity - 1 };
+        } else {
+          deleteFromCart(product.id);
+          return null;
+        }
+      }
+      return product;
+    })
+    .filter(Boolean);
+
+  localStorage.setItem("cartProducts", JSON.stringify(updatedProducts));
+  renderCartProducts();
+}
+
+function calculateTotal() {
+  const cartProducts = JSON.parse(localStorage.getItem("cartProducts")) || [];
+  const total = cartProducts.reduce((acc, product) => {
+    return acc + product.price * product.quantity;
+  }, 0);
+
+  return total.toFixed(2);
+}
+
+subtotal.innerHTML = calculateTotal();
+updateBtn.addEventListener("click", () => {
+  subtotal.innerHTML = calculateTotal();
+});
+
+function makeDiscount(price, discount) {
+  return price - (price * discount) / 100;
+}
+
+function applyDiscount() {
+  const totalPrice = calculateTotal();
+  const inputValue = couponInput.value;
+  const coupon = coupons.find((coupon) => coupon.kod === inputValue);
+  console.log(coupon);
+  if (coupon) {
+    const updatedPrice = makeDiscount(totalPrice, coupon.discount);
+    subtotal.textContent = `${updatedPrice}`;
+  } else {
+    alert("Invalid coupon!");
+  }
+}
+
+applyBtn.addEventListener("click", () => {
+  applyDiscount();
+});
+
+//main end
