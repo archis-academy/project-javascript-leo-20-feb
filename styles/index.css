@@ -247,7 +247,7 @@
   max-width: 1300px;
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
+  margin: 50px auto;
 }
 
 .todays-products-title-container {
@@ -282,6 +282,7 @@
 .flash-sales-container {
   display: flex;
   justify-content: space-between;
+  margin: 20px 0;
 }
 
 .carousel-container {
