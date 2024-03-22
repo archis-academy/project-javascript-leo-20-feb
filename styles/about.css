@@ -1,6 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
-
 /* Sebile/Beginning of About page Founders */
 .employee-container {
   max-width: 1300px;
@@ -147,4 +144,181 @@
   background: rgba(47, 46, 48, 0.3);
   padding: 5px 5px 0 5px;
   border-radius: 50%;
+}
+
+/* yüsra about page */
+
+.navbar-section ul {
+  margin: 50px auto;
+  display: flex;
+  gap: 20px;
+  font-size: 14px;
+}
+
+.navbar-section ul li a:hover {
+  font-weight: bold;
+}
+
+.about-container {
+  font-family: "Poppins", sans-serif;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.our-story-section {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.our-story-title {
+  font-family: Inter;
+  font-weight: 600;
+  font-size: 54px;
+  margin: 30px auto;
+}
+
+.our-story-left p {
+  font-size: 16px;
+}
+
+.about-icons-section {
+  display: flex;
+  justify-content: space-around;
+  margin: 100px auto;
+}
+
+.icon-item {
+  display: flex;
+  flex-direction: column;
+  height: 230px;
+  width: 230px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.about-icons-section h3 {
+  font-family: Inter;
+  font-weight: 700;
+  font-size: 32px;
+}
+
+.about-icons-section p {
+  font-size: 16px;
+  text-align: center;
+}
+
+.icon-item:hover {
+  background-color: #db4444;
+  transform: scale(1.1);
+  color: white;
+  box-shadow: 0 29px 52px rgba(0, 0, 0, 0.4), 0 25px 16px rgba(0, 0, 0, 0.2);
+}
+
+.icon-item:hover img {
+  filter: invert(100%);
+}
+
+@media (max-width: 1300px) and (min-width: 970px) {
+  .about-container {
+    padding: 0 20px;
+  }
+
+  .our-story-left,
+  .our-story-right {
+    width: 50%;
+  }
+
+  .our-story-right img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-width: 970px) {
+  .navbar-section ul {
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+  }
+
+  .our-story-section {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 670px) {
+  .our-story-right img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-width: 540px) {
+  .about-container {
+    padding: 0 10px;
+  }
+
+  .about-icons-section {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .icon-item {
+    width: 45%;
+    margin: 10px;
+  }
+
+  .icon-item img {
+    max-width: 50%;
+  }
+
+  .icon-item h3 {
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 440px) {
+  .navbar-section ul {
+    font-size: 10px;
+  }
+
+  .about-icons-section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .icon-item {
+    width: 80%;
+  }
+
+  .icon-item img {
+    width: 50px;
+  }
+
+  .icon-item h3 {
+    font-size: 18px;
+  }
+
+  .icon-item p {
+    font-size: 12px;
+  }
+
+  .our-story-title {
+    font-size: 24px;
+    margin: 10px auto;
+  }
+
+  .our-story-left p {
+    font-size: 10px;
+  }
+
+  .about-icons-section {
+    margin: 20px auto;
+  }
 }
