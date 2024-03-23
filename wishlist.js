@@ -91,7 +91,6 @@ const movetoRightIcon = document.querySelector(".move-to-right-icon");
 let currIndex = 0;
 let products = [];
 
-localStorage.setItem("wishlistProducts", JSON.stringify(products));
 
 function getWishlistProducts() {
   try {
