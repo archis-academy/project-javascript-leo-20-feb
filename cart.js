@@ -87,8 +87,8 @@ const subtotal = document.querySelector(".subtotal span");
 const updateBtn = document.querySelector(".update-btn");
 const couponInput = document.querySelector(".coupon-box input");
 const applyBtn = document.querySelector(".coupon-box button");
-
-console.log(updateBtn);
+const removeIcon = document.querySelector(".remove-icon");
+const emptyContainer = document.querySelector(".empty-container");
 const cartProductList = [
   {
     id: 1,
@@ -130,23 +130,32 @@ localStorage.setItem("cartProducts", JSON.stringify(cartProductList));
 
 function renderCartProducts() {
   const cartProducts = JSON.parse(localStorage.getItem("cartProducts")) || [];
-
-  productsTable.innerHTML = cartProducts
-    .map((product) => {
-      return `<tr><td><img src=${product.image}><p>${product.title}</p></td>
+  if (cartProducts.length > 0) {
+    productsTable.innerHTML = cartProducts
+      .map((product) => {
+        return `<tr><td onclick="deleteFromCardProducts(${
+          product.id
+        })" class="image-td"><img src=${product.image}><p>${
+          product.title
+        }</p><img class="remove-icon" src="images/remove.png"/></td>
     <td>${product.price}</td>
     <td><span class="quantity-box">${
       product.quantity
     }<span ><img class="up-icon" onclick="incrementQuantity(${
-        product.id
-      })" src="images/angle-up-solid.svg"> <img class="down-icon" onclick="decrementQuantity(${
-        product.id
-      })" src="images/angle-down-solid.svg"> </span></span>
+          product.id
+        })" src="images/angle-up-solid.svg"> <img class="down-icon" onclick="decrementQuantity(${
+          product.id
+        })" src="images/angle-down-solid.svg"> </span></span>
     </td>
     <td>${product.quantity * product.price}</td></tr>`;
-    })
-    .join("");
+      })
+      .join("");
+  } else {
+    emptyContainer.innerHTML = `<div class="empty-cart"><h1>Your cart is empty</h1>
+    <p>Looks like you have no items in your shopping cart.</p><button class="red-button"><a href="index.html">Shop Now</a></button></div>`;
+  }
 }
+
 renderCartProducts();
 function incrementQuantity(productId) {
   const cartProducts = JSON.parse(localStorage.getItem("cartProducts")) || [];
@@ -212,7 +221,6 @@ function applyDiscount() {
   const totalPrice = calculateTotal();
   const inputValue = couponInput.value;
   const coupon = coupons.find((coupon) => coupon.kod === inputValue);
-  console.log(coupon);
   if (coupon) {
     const updatedPrice = makeDiscount(totalPrice, coupon.discount);
     subtotal.textContent = `${updatedPrice}`;
@@ -224,5 +232,14 @@ function applyDiscount() {
 applyBtn.addEventListener("click", () => {
   applyDiscount();
 });
+
+function deleteFromCardProducts(deletedProductId) {
+  const cartProducts = JSON.parse(localStorage.getItem("cartProducts")) || [];
+  const filteredProducts = cartProducts.filter(
+    (product) => product.id !== deletedProductId
+  );
+  localStorage.setItem("cartProducts", JSON.stringify(filteredProducts));
+  renderCartProducts();
+}
 
 //main end
