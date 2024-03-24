@@ -84,6 +84,7 @@ searchInput.addEventListener("keyup", (e) => {
 //Main start
 const productsTable = document.querySelector(".products-table");
 const subtotal = document.querySelector(".subtotal span");
+const total = document.querySelector(".total span");
 const updateBtn = document.querySelector(".update-btn");
 const couponInput = document.querySelector(".coupon-box input");
 const applyBtn = document.querySelector(".coupon-box button");
@@ -138,7 +139,7 @@ function renderCartProducts() {
         })" class="image-td"><img src=${product.image}><p>${
           product.title
         }</p><img class="remove-icon" src="images/remove.png"/></td>
-    <td>${product.price}</td>
+    <td>${product.price} ₺</td>
     <td><span class="quantity-box">${
       product.quantity
     }<span ><img class="up-icon" onclick="incrementQuantity(${
@@ -147,7 +148,7 @@ function renderCartProducts() {
           product.id
         })" src="images/angle-down-solid.svg"> </span></span>
     </td>
-    <td>${product.quantity * product.price}</td></tr>`;
+    <td>${product.quantity * product.price} ₺</td></tr>`;
       })
       .join("");
   } else {
@@ -208,9 +209,11 @@ function calculateTotal() {
   return total.toFixed(2);
 }
 
-subtotal.innerHTML = calculateTotal();
+subtotal.textContent = `${calculateTotal()} ₺`;
+total.textContent = `${calculateTotal()} ₺`;
 updateBtn.addEventListener("click", () => {
-  subtotal.innerHTML = calculateTotal();
+  subtotal.textContent = `${calculateTotal()} ₺`;
+  total.textContent = `${calculateTotal()} ₺`;
 });
 
 function makeDiscount(price, discount) {
@@ -223,7 +226,8 @@ function applyDiscount() {
   const coupon = coupons.find((coupon) => coupon.kod === inputValue);
   if (coupon) {
     const updatedPrice = makeDiscount(totalPrice, coupon.discount);
-    subtotal.textContent = `${updatedPrice}`;
+    subtotal.textContent = `${updatedPrice} ₺`;
+    total.textContent = `${updatedPrice} ₺`;
   } else {
     alert("Invalid coupon!");
   }
