@@ -94,3 +94,34 @@ setInterval(() => {
   handleDotClick(activeDotIndex);
 }, 3000);
 //sebile/PR-13 Founders end
+// Quantity icon start
+function addToWishCount() {
+  const wishCount = JSON.parse(localStorage.getItem("wishlistProducts") || []);
+  const wishItemCountElement = document.getElementById("wish-item-count");
+  if (wishCount.length > 0) {
+    wishItemCountElement.textContent = `${wishCount.length}`;
+    wishItemCountElement.classList.add("quantity-icon");
+  } else {
+    wishItemCountElement.textContent = ``;
+    wishItemCountElement.classList.remove("quantity-icon");
+  }
+}
+addToWishCount();
+
+function addToCartCount() {
+  const cartCount = JSON.parse(localStorage.getItem("cartProducts") || []);
+  console.log(cartCount);
+  const totalQuantity = cartCount.reduce((acc, product) => {
+    return acc + product.quantity;
+  }, 0);
+  const cartItemCountElement = document.getElementById("cart-item-count");
+  if (totalQuantity > 0) {
+    cartItemCountElement.textContent = `${totalQuantity}`;
+    cartItemCountElement.classList.add("quantity-icon");
+  } else {
+    cartItemCountElement.textContent = ``;
+    cartItemCountElement.classList.remove("quantity-icon");
+  }
+}
+addToCartCount();
+// Quantity icon end

@@ -14,134 +14,172 @@
     />
   </head>
   <body>
-     <!-- Sebile/Beginning of Homepage-Header -->
-  <header>
-    <div class="top-header-container">
-      <div class="top-header">
-        <p class="summer-sale-title">
-          Summer Sale
-          <span>For All Swim Suits And Free Express Delivery</span>- OFF 50%!
-          <a href="#"> ShopNow</a>
-        </p>
+    <!-- Sebile/Beginning of Homepage-Header -->
+    <header>
+      <div class="top-header-container">
+        <div class="top-header">
+          <p class="summer-sale-title">
+            Summer Sale
+            <span>For All Swim Suits And Free Express Delivery</span>- OFF 50%!
+            <a href="#"> ShopNow</a>
+          </p>
 
-        <div class="header-language">
-          <select id="select-btn">
-            <option id="value1" value="value1"></option>
-          </select>
+          <div class="header-language">
+            <select id="select-btn">
+              <option id="value1" value="value1"></option>
+            </select>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="hr-container">
-      <div class="header-top-navbar">
-        <div class="header-logo-container">
-          <img id="menuBtn" src="images/menu_FILL0_wght400_GRAD0_opsz24.png" alt="" />
-          <strong>Exclusive</strong>
-        </div>
-        <nav class="header-navbar">
-          <ul>
-            <li>
-              <a id="target-1" class="active-link" href="index.html">Home</a>
-            </li>
-            <li><a id="target-2" href="#">Contact</a></li>
-            <li><a id="target-3" href="about.html">About</a></li>
-            <li><a id="target-4" href="login.html">Sign Up</a></li>
-          </ul>
-        </nav>
-        <div class="top-search-section">
-          <div class="search-container">
-            <div class="searchbar">
-              <input type="type" placeholder="What are you looking for?" />
-              <img id="header-search-icon" src="images/search-icon.svg" alt="search-icon" />
+      <div class="hr-container">
+        <div class="header-top-navbar">
+          <div class="header-logo-container">
+            <img
+              id="menuBtn"
+              src="images/menu_FILL0_wght400_GRAD0_opsz24.png"
+              alt=""
+            />
+            <strong>Exclusive</strong>
+          </div>
+          <nav class="header-navbar">
+            <ul>
+              <li>
+                <a id="target-1" class="active-link" href="index.html">Home</a>
+              </li>
+              <li><a id="target-2" href="#">Contact</a></li>
+              <li><a id="target-3" href="about.html">About</a></li>
+              <li><a id="target-4" href="login.html">Sign Up</a></li>
+            </ul>
+          </nav>
+          <div class="top-search-section">
+            <div class="search-container">
+              <div class="searchbar">
+                <input type="type" placeholder="What are you looking for?" />
+                <img
+                  id="header-search-icon"
+                  src="images/search-icon.svg"
+                  alt="search-icon"
+                />
+              </div>
+              <div id="product-list"></div>
             </div>
-            <div id="product-list"></div>
-          </div>
-          <a href="wishlist.html"><img src="images/wishlist-icon.svg" alt="wishlist-icon" /></a>
-          <a href="cart.html"><img src="images/Cart1.png" alt="cart-icon" /></a>
-        </div>
-      </div>
-    </div>
-
-    <div class="header-as-container">
-      <aside>
-        <nav class="header-aside-menu">
-          <ul>
-            <li class="fashion-links woman-element">
-              <a href="#">Woman's Fashion</a><a href="#"><img src="images/Vector-3.png" /></a>
-            </li>
-
-            <li class="fashion-links men-element">
-              <a href="#">Men's Fashion</a><a href="#"><img src="images/Vector-3.png" /></a>
-            </li>
-
-            <li><a href="#">Electronics</a></li>
-            <li><a href="#">Home & Lifestyle</a></li>
-            <li><a href="#">Medicine</a></li>
-            <li><a href="#">Sports & Outdoor</a></li>
-            <li><a href="#">Baby's & Toys</a></li>
-            <li><a href="#">Groceries & Pets</a></li>
-            <li><a href="#">Health & Beauty</a></li>
-          </ul>
-        </nav>
-      </aside>
-      <section>
-        <div class="section-image-container">
-          <div class="my-slides fade">
-            <img id="carouselImage" src="images/carousel1.png" alt="slider-1" />
-          </div>
-          <div class="dots">
-            <span class="dot active-dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
+            <a href="wishlist.html"
+              ><img src="images/wishlist-icon.svg" alt="wishlist-icon" />
+              <span id="wish-item-count"></span
+            ></a>
+            <a href="cart.html"
+              ><img src="images/Cart1.png" alt="cart-icon" />
+              <span id="cart-item-count"></span
+            ></a>
           </div>
         </div>
-      </section>
-    </div>
-  </header>
-  <!-- Sebile/End of Homepage-Header -->
-  <!-- Yüsra PR-2 Homepage Today's Products -->
-  <div class="todays-products-container">
-    <div class="todays-products-title-container">
-      <div class="title-rectangle"></div>
-      <h1 class="todays-products-title">Today's</h1>
-    </div>
+      </div>
 
-    <div class="flash-sales-container">
-      <h2 class="flash-sales-title">Flash Sales</h2>
+      <div class="header-as-container">
+        <aside>
+          <nav class="header-aside-menu">
+            <ul>
+              <li class="fashion-links woman-element">
+                <a href="#">Woman's Fashion</a
+                ><a href="#"><img src="images/Vector-3.png" /></a>
+              </li>
 
-      <div class="btn-container">
-        <img class="prev-btn" onclick="prevProduct()" src="images/icons-left-arrow.svg" alt="left-arrow" />
-        <img class="next-btn" onclick="nextProduct()" src="images/icons-right-arrow.svg" alt="right-arrow" />
+              <li class="fashion-links men-element">
+                <a href="#">Men's Fashion</a
+                ><a href="#"><img src="images/Vector-3.png" /></a>
+              </li>
+
+              <li><a href="#">Electronics</a></li>
+              <li><a href="#">Home & Lifestyle</a></li>
+              <li><a href="#">Medicine</a></li>
+              <li><a href="#">Sports & Outdoor</a></li>
+              <li><a href="#">Baby's & Toys</a></li>
+              <li><a href="#">Groceries & Pets</a></li>
+              <li><a href="#">Health & Beauty</a></li>
+            </ul>
+          </nav>
+        </aside>
+        <section>
+          <div class="section-image-container">
+            <div class="my-slides fade">
+              <img
+                id="carouselImage"
+                src="images/carousel1.png"
+                alt="slider-1"
+              />
+            </div>
+            <div class="dots">
+              <span class="dot active-dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+            </div>
+          </div>
+        </section>
+      </div>
+    </header>
+    <!-- Sebile/End of Homepage-Header -->
+    <!-- Yüsra PR-2 Homepage Today's Products -->
+    <div class="todays-products-container">
+      <div class="todays-products-title-container">
+        <div class="title-rectangle"></div>
+        <h1 class="todays-products-title">Today's</h1>
+      </div>
+
+      <div class="flash-sales-container">
+        <h2 class="flash-sales-title">Flash Sales</h2>
+
+        <div class="btn-container">
+          <img
+            class="prev-btn"
+            onclick="prevProduct()"
+            src="images/icons-left-arrow.svg"
+            alt="left-arrow"
+          />
+          <img
+            class="next-btn"
+            onclick="nextProduct()"
+            src="images/icons-right-arrow.svg"
+            alt="right-arrow"
+          />
+        </div>
+      </div>
+
+      <div class="carousel-container">
+        <div class="product-carousel" id="productCarousel"></div>
+      </div>
+      <div class="view-all-btn-container">
+        <button class="view-all-btn" id="viewAllBtn">View All Products</button>
       </div>
     </div>
+    <!-- Yüsra PR-2 Homepage Today's Products End -->
 
-    <div class="carousel-container">
-      <div class="product-carousel" id="productCarousel"></div>
-    </div>
-    <div class="view-all-btn-container">
-      <button class="view-all-btn" id="viewAllBtn">View All Products</button>
-    </div>
-  </div>
-  <!-- Yüsra PR-2 Homepage Today's Products End -->
-
-  <!-- Sebile/PR-3 Beginning of browse by category -->
-  <div class="browse-by-container">
-    <div class="categories-title">
-      <div class="red-box"></div>
-      <h3>Categories</h3>
-    </div>
-    <div class="browse-by-title">
-      <h2>Browse By Category</h2>
-      <div class="left-right-icons">
-        <img src="images/Fill With Left Arrow.png" alt="left-icon" class="move-to-left-icon" />
-        <img src="images/Fill with Right Arrow.png" alt="right-icon" class="move-to-right-icon" />
+    <!-- Sebile/PR-3 Beginning of browse by category -->
+    <div class="browse-by-container">
+      <div class="categories-title">
+        <div class="red-box"></div>
+        <h3>Categories</h3>
       </div>
+      <div class="browse-by-title">
+        <h2>Browse By Category</h2>
+        <div class="left-right-icons">
+          <img
+            src="images/Fill With Left Arrow.png"
+            alt="left-icon"
+            class="move-to-left-icon"
+          />
+          <img
+            src="images/Fill with Right Arrow.png"
+            alt="right-icon"
+            class="move-to-right-icon"
+          />
+        </div>
+      </div>
+      <div class="category-boxes"></div>
     </div>
-    <div class="category-boxes"></div>
-  </div>
-  <!-- Sebile/PR-3 End of browse by category -->
-  <!-- Mücahit Best Selling Products -->
+    <!-- Sebile/PR-3 End of browse by category -->
+    <!-- Mücahit Best Selling Products -->
     <div class="best-selling-products">
       <div class="best-selling-title">
         <img src="./images/best-selling-title-rectangle.png" />
@@ -153,135 +191,151 @@
       </div>
       <div class="best-products-container" id="bestProductsContainer"></div>
     </div>
-  <!-- NEW ARRİVALS-->
-  <div class="container">
-    <div class="title">
-      <div class="featured">
-        <img src="images/rectangle.png" />
-        <p>Featured</p>
-      </div>
-      <div class="title-new-arrival">New Arrival</div>
-    </div>
-    <div class="content">
-      <div class="left-item">
-        <img src="images/arrival1.png" alt="" />
-      </div>
-      <div class="right-item">
-        <div class="right-item-top">
-          <img src="images/arrival2.png" alt="" />
-        </div>
-        <div class="right-item-bottom">
-          <div class="right-item-bottom-left">
-            <img src="images/arrival3.png" alt="" />
-          </div>
-          <div class="right-item-bottom-right">
-            <img src="images/arrival4.png" alt="" />
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- SERVİCES -->
-    <div class="services">
-      <div class="services-items">
-        <div class="bg-img">
-          <img src="./images/icon-delivery.svg" />
-        </div>
-        <h1>FREE AND FAST DELIVERY</h1>
-        <p>Free delivery for all orders over $140</p>
-      </div>
-      <div class="services-items">
-        <div class="bg-img">
-          <img src="./images/icon-customer-service.svg" />
-        </div>
-        <h1>24/7 CUSTOMER SERVICE</h1>
-        <p>Friendly 24/7 customer support</p>
-      </div>
-      <div class="services-items">
-        <div class="bg-img">
-          <img src="./images/icon-secure.svg" />
-        </div>
-        <h1>MONEY BACK GUARANTEE</h1>
-        <p>We reurn money within 30 days</p>
-      </div>
-    </div>
-  </div>
-  <!--FOOTER-->
-  <footer class="footer">
+    <!-- NEW ARRİVALS-->
     <div class="container">
-      <div class="row">
-        <div class="footer-col">
-          <h4>Exclusive</h4>
-          <ul>
-            <li>Subscribe</li>
-            <li>
-              <p>Get %10 off your first order</p>
-            </li>
-            <li>
-              <div class="send-items">
-                <input type="text" placeholder="Enter Your E-Mail" />
-                <img src="images/icon-send.svg" alt="" />
-              </div>
-            </li>
-          </ul>
+      <div class="title">
+        <div class="featured">
+          <img src="images/rectangle.png" />
+          <p>Featured</p>
         </div>
-        <div class="footer-col">
-          <h4>Support</h4>
-          <ul>
-            <li>
-              <p>111 Bijoy sarani, Dhaka, DH 1515, Bangladesh</p>
-            </li>
-            <li>
-              <p>exclusive@gmail.com</p>
-            </li>
-            <li>
-              <p>+90555-555-55-55</p>
-            </li>
-          </ul>
+        <div class="title-new-arrival">New Arrival</div>
+      </div>
+      <div class="content">
+        <div class="left-item">
+          <img src="images/arrival1.png" alt="" />
         </div>
-        <div class="footer-col">
-          <h4>Account</h4>
-          <ul>
-            <li><a href="#">My Account</a></li>
-            <li><a href="#">Login / Register</a></li>
-            <li><a href="#">Cart</a></li>
-            <li><a href="#">Wishlist</a></li>
-            <li><a href="#">Shop</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Quick Link</h4>
-          <ul>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Terms Of Use</a></li>
-            <li><a href="#">FAQ</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Download App</h4>
-          <div class="social-links">
-            <p>Save $3 with App New User Only</p>
-            <div class="app-links">
-              <img src="./images/qr-code.png" alt="qr-code" />
-              <div class="download-links">
-                <a href="#"><img src="./images/badge-google-play.svg" alt="badge-google-play" /></a>
-                <a href="#"><img src="./images/badge-app-store.svg" alt="badge-app-store" /></a>
-              </div>
+        <div class="right-item">
+          <div class="right-item-top">
+            <img src="images/arrival2.png" alt="" />
+          </div>
+          <div class="right-item-bottom">
+            <div class="right-item-bottom-left">
+              <img src="images/arrival3.png" alt="" />
             </div>
-            <div class="social-media-links">
-              <a href="#"><img src="./images/icon-facebook.svg" alt="icon-facebook" /></a>
-              <a href="#"><img src="./images/icon-twitter.svg" alt="icon-twitter" /></a>
-              <a href="#"><img src="./images/icon-instagram.svg" alt="icon-instagram" /></a>
-              <a href="#"><img src="./images/icon-linkedin.svg" alt="icon-linkedin" /></a>
+            <div class="right-item-bottom-right">
+              <img src="images/arrival4.png" alt="" />
             </div>
           </div>
         </div>
       </div>
+      <!-- SERVİCES -->
+      <div class="services">
+        <div class="services-items">
+          <div class="bg-img">
+            <img src="./images/icon-delivery.svg" />
+          </div>
+          <h1>FREE AND FAST DELIVERY</h1>
+          <p>Free delivery for all orders over $140</p>
+        </div>
+        <div class="services-items">
+          <div class="bg-img">
+            <img src="./images/icon-customer-service.svg" />
+          </div>
+          <h1>24/7 CUSTOMER SERVICE</h1>
+          <p>Friendly 24/7 customer support</p>
+        </div>
+        <div class="services-items">
+          <div class="bg-img">
+            <img src="./images/icon-secure.svg" />
+          </div>
+          <h1>MONEY BACK GUARANTEE</h1>
+          <p>We reurn money within 30 days</p>
+        </div>
+      </div>
     </div>
-    <div class="copyright">
-      <p>© Copyright Archi's 2024. All right reserved.</p>
-    </div>
-  </footer>
+    <!--FOOTER-->
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="footer-col">
+            <h4>Exclusive</h4>
+            <ul>
+              <li>Subscribe</li>
+              <li>
+                <p>Get %10 off your first order</p>
+              </li>
+              <li>
+                <div class="send-items">
+                  <input type="text" placeholder="Enter Your E-Mail" />
+                  <img src="images/icon-send.svg" alt="" />
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Support</h4>
+            <ul>
+              <li>
+                <p>111 Bijoy sarani, Dhaka, DH 1515, Bangladesh</p>
+              </li>
+              <li>
+                <p>exclusive@gmail.com</p>
+              </li>
+              <li>
+                <p>+90555-555-55-55</p>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Account</h4>
+            <ul>
+              <li><a href="#">My Account</a></li>
+              <li><a href="#">Login / Register</a></li>
+              <li><a href="#">Cart</a></li>
+              <li><a href="#">Wishlist</a></li>
+              <li><a href="#">Shop</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Quick Link</h4>
+            <ul>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms Of Use</a></li>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Download App</h4>
+            <div class="social-links">
+              <p>Save $3 with App New User Only</p>
+              <div class="app-links">
+                <img src="./images/qr-code.png" alt="qr-code" />
+                <div class="download-links">
+                  <a href="#"
+                    ><img
+                      src="./images/badge-google-play.svg"
+                      alt="badge-google-play"
+                  /></a>
+                  <a href="#"
+                    ><img
+                      src="./images/badge-app-store.svg"
+                      alt="badge-app-store"
+                  /></a>
+                </div>
+              </div>
+              <div class="social-media-links">
+                <a href="#"
+                  ><img src="./images/icon-facebook.svg" alt="icon-facebook"
+                /></a>
+                <a href="#"
+                  ><img src="./images/icon-twitter.svg" alt="icon-twitter"
+                /></a>
+                <a href="#"
+                  ><img src="./images/icon-instagram.svg" alt="icon-instagram"
+                /></a>
+                <a href="#"
+                  ><img src="./images/icon-linkedin.svg" alt="icon-linkedin"
+                /></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>© Copyright Archi's 2024. All right reserved.</p>
+      </div>
+    </footer>
     <script src="app.js"></script>
   </body>
 </html>

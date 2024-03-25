@@ -45,7 +45,7 @@ document.addEventListener("click", (event) => {
 //Responsive Navbar end
 
 let allProducts = [];
-async function getProducts() {
+async function getProductsForNavbar() {
   try {
     const response = await fetch("https://fakestoreapi.com/products");
     const data = await response.json();
@@ -55,7 +55,7 @@ async function getProducts() {
   }
 }
 
-getProducts();
+getProductsForNavbar();
 
 //Searchbar start
 const searchIcon = document.querySelector("#header-search-icon");
@@ -249,8 +249,7 @@ function addToWishlist(productId, iconState) {
   heartIcon.style.fill = "red";
   heartIcon.style.stroke = "red";
 
-  const wishlistProducts =
-    JSON.parse(localStorage.getItem("wishlistProducts")) || [];
+  wishlistProducts = JSON.parse(localStorage.getItem("wishlistProducts")) || [];
 
   const wishlistProduct = wishlistProducts.find(
     (product) => product.id === productId
@@ -267,6 +266,7 @@ function addToWishlist(productId, iconState) {
   } else {
     deleteFromWishlist(productId, iconState);
   }
+  addToWishCount();
 }
 
 function deleteFromWishlist(deletedProductId, iconState) {
@@ -286,6 +286,7 @@ function deleteFromWishlist(deletedProductId, iconState) {
     (product) => product.id !== deletedProductId
   );
   localStorage.setItem("wishlistProducts", JSON.stringify(filteredProducts));
+  addToWishCount();
 }
 
 function addToCart(productId) {
@@ -534,3 +535,34 @@ function getBestSellingProducts() {
     })
     .join("");
 }
+// Quantity icon start
+function addToWishCount() {
+  const wishCount = JSON.parse(localStorage.getItem("wishlistProducts") || []);
+  const wishItemCountElement = document.getElementById("wish-item-count");
+  if (wishCount.length > 0) {
+    wishItemCountElement.textContent = `${wishCount.length}`;
+    wishItemCountElement.classList.add("quantity-icon");
+  } else {
+    wishItemCountElement.textContent = ``;
+    wishItemCountElement.classList.remove("quantity-icon");
+  }
+}
+addToWishCount();
+
+function addToCartCount() {
+  const cartCount = JSON.parse(localStorage.getItem("cartProducts") || []);
+  console.log(cartCount);
+  const totalQuantity = cartCount.reduce((acc, product) => {
+    return acc + product.quantity;
+  }, 0);
+  const cartItemCountElement = document.getElementById("cart-item-count");
+  if (totalQuantity > 0) {
+    cartItemCountElement.textContent = `${totalQuantity}`;
+    cartItemCountElement.classList.add("quantity-icon");
+  } else {
+    cartItemCountElement.textContent = ``;
+    cartItemCountElement.classList.remove("quantity-icon");
+  }
+}
+addToCartCount();
+// Quantity icon end
