@@ -826,3 +826,45 @@ body {
 }
 
 /* MÜCAHİT BEST SELLING PRODUCTS END */
+
+/* Mücahit Explore Our Products Start */
+.explore-our-products {
+  max-width: 1300px;
+  margin: 50px auto;
+  font-family: "Poppins", sans-serif;
+}
+
+.explore-our-products-title {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  color: #db4444;
+  font-size: 20px;
+}
+
+.explore-products-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 100px;
+  margin-top: 40px;
+}
+
+.explore-products-img {
+  width: 100%;
+  height: 250px;
+}
+
+.explore-products {
+  position: relative;
+}
+
+.explore-wishlist-and-cart {
+  display: flex;
+  flex-direction: column;
+  width: 30px;
+  position: absolute;
+  right: -35px;
+  top: -8px;
+  cursor: pointer;
+}
+/* Mücahit Explore Our Products End */

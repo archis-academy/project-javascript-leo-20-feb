@@ -172,6 +172,7 @@ async function getProducts() {
     allProducts = data;
     showProducts();
     getBestSellingProducts();
+    exploreProducts();
   } catch (error) {
     console.error("Hata oluştu.", error);
   }
@@ -233,16 +234,21 @@ function getStars(rating) {
 }
 
 function addToWishlist(productId, iconState) {
-  // if (iconState === "bestSelling") {
-  //   heartIcon = document.getElementById(`heartIconBestSelling${productId}`);
-  // } else {
-  //   heartIcon = document.getElementById(`heartIcon${productId}`);
-  // }
+  let heartIconParameter;
 
-  const heartIconParameter =
-    iconState === "bestSelling"
-      ? `heartIconBestSelling${productId}`
-      : `heartIcon${productId}`;
+  if (iconState === "bestSelling") {
+    heartIconParameter = `heartIconBestSelling${productId}`;
+  } else if (iconState === "flashProducts") {
+    heartIconParameter = `heartIcon${productId}`;
+  } else if (iconState === "exploreProducts") {
+    // Yeni durum kontrolü
+    heartIconParameter = `heartIconExploreProducts${productId}`;
+  }
+
+  // const heartIconParameter =
+  //   iconState === "bestSelling"
+  //     ? `heartIconBestSelling${productId}`
+  //     : `heartIcon${productId}`;
 
   const heartIcon = document.getElementById(heartIconParameter);
 
@@ -270,10 +276,20 @@ function addToWishlist(productId, iconState) {
 }
 
 function deleteFromWishlist(deletedProductId, iconState) {
-  const heartIconParameter =
-    iconState === "bestSelling"
-      ? `heartIconBestSelling${deletedProductId}`
-      : `heartIcon${deletedProductId}`;
+  let heartIconParameter;
+
+  if (iconState === "bestSelling") {
+    heartIconParameter = `heartIconBestSelling${deletedProductId}`;
+  } else if (iconState === "flashProducts") {
+    heartIconParameter = `heartIcon${deletedProductId}`;
+  } else if (iconState === "exploreProducts") {
+    // Yeni durum kontrolü
+    heartIconParameter = `heartIconExploreProducts${deletedProductId}`;
+  }
+  // const heartIconParameter =
+  //   iconState === "bestSelling"
+  //     ? `heartIconBestSelling${deletedProductId}`
+  //     : `heartIcon${deletedProductId}`;
 
   const heartIcon = document.getElementById(heartIconParameter);
 
@@ -533,4 +549,44 @@ function getBestSellingProducts() {
             </div>`;
     })
     .join("");
+}
+
+/* Mücahit Explore Our Products */
+
+const exploreProductsContainer = document.querySelector(
+  "#exploreProductsContainer"
+);
+
+function exploreProducts() {
+  const firstEightProducts = allProducts.slice(0, 8);
+
+  exploreProductsContainer.innerHTML = firstEightProducts
+    .map((product) => {
+      return `<div class="explore-products">
+    <img class="explore-products-img" src="${product.image}" alt="${
+        product.title
+      }">
+    <h3 class="explore-products-title">${product.title}</h3>
+    <p class="explore-product-price">$${product.price}</p>
+    <div class="explore-products-rate">
+              <p>${getStars(product.rating.rate)}</p>
+              <p>(${product.rating.count})</p>
+              </div>
+              <div class="explore-wishlist-and-cart">
+               <svg onclick="addToWishlist(${
+                 product.id
+               }, 'exploreProducts')" width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path id="heartIconExploreProducts${
+                            product.id
+                          }" d="M11 7C8.239 7 6 9.216 6 11.95C6 14.157 6.875 19.395 15.488 24.69C15.6423 24.7839 15.8194 24.8335 16 24.8335C16.1806 24.8335 16.3577 24.7839 16.512 24.69C25.125 19.395 26 14.157 26 11.95C26 9.216 23.761 7 21 7C18.239 7 16 10 16 10C16 10 13.761 7 11 7Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+              <img onClick="addToCart(${
+                product.id
+              })" src="images/cart-icon.svg"/>
+              </div>
+    </div>`;
+    })
+    .join("");
+  setHeartIcons();
+  setCartIcons();
 }
