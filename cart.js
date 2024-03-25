@@ -131,6 +131,7 @@ localStorage.setItem("cartProducts", JSON.stringify(cartProductList));
 
 function renderCartProducts() {
   const cartProducts = JSON.parse(localStorage.getItem("cartProducts")) || [];
+
   if (cartProducts.length > 0) {
     productsTable.innerHTML = cartProducts
       .map((product) => {
@@ -155,6 +156,7 @@ function renderCartProducts() {
     emptyContainer.innerHTML = `<div class="empty-cart"><h1>Your cart is empty</h1>
     <p>Looks like you have no items in your shopping cart.</p><button class="red-button"><a href="index.html">Shop Now</a></button></div>`;
   }
+  calculateQuantity(cartProducts);
 }
 
 renderCartProducts();
@@ -247,3 +249,31 @@ function deleteFromCardProducts(deletedProductId) {
 }
 
 //main end
+// Quantity icon start
+function addToWishCount() {
+  const wishCount = JSON.parse(localStorage.getItem("wishlistProducts") || []);
+  const wishItemCountElement = document.getElementById("wish-item-count");
+  if (wishCount.length > 0) {
+    wishItemCountElement.textContent = `${wishCount.length}`;
+    wishItemCountElement.classList.add("quantity-icon");
+  } else {
+    wishItemCountElement.textContent = ``;
+    wishItemCountElement.classList.remove("quantity-icon");
+  }
+}
+addToWishCount();
+
+function calculateQuantity(products) {
+  const totalQuantity = products.reduce((acc, product) => {
+    return acc + product.quantity;
+  }, 0);
+  const cartItemCountElement = document.getElementById("cart-item-count");
+  if (totalQuantity > 0) {
+    cartItemCountElement.textContent = `${totalQuantity}`;
+    cartItemCountElement.classList.add("quantity-icon");
+  } else {
+    cartItemCountElement.textContent = ``;
+    cartItemCountElement.classList.remove("quantity-icon");
+  }
+}
+// Quantity icon end

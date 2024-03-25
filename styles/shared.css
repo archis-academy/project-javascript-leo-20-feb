@@ -143,6 +143,20 @@ header a {
 }
 .top-search-section a {
   height: 32px;
+  position: relative;
+}
+.quantity-icon {
+  position: absolute;
+  background-color: #db4444;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  font-size: 11px;
+  text-align: center;
+  color: #f5f5f5;
+  padding: 1px;
+  top: 0;
+  left: -3px;
 }
 /* Hr-container end */
 @media (max-width: 880px) {

@@ -91,7 +91,6 @@ const movetoRightIcon = document.querySelector(".move-to-right-icon");
 let currIndex = 0;
 let products = [];
 
-
 function getWishlistProducts() {
   try {
     const response = JSON.parse(localStorage.getItem("wishlistProducts")) || [];
@@ -115,16 +114,24 @@ function showProducts() {
     productCarousel.innerHTML = products
       .map((product) => {
         return `<div class="product-card">
-    <img class ="product-card-img" src ="${product.image}" alt = "${product.title}"/> 
-    <button class="add-to-cart-btn" id="addToCartBtn" onclick="addToCart(${product.id})">Add To Cart</button>
+    <img class ="product-card-img" src ="${product.image}" alt = "${
+          product.title
+        }"/> 
+    <button class="add-to-cart-btn" id="addToCartBtn" onclick="addToCart(${
+      product.id
+    })">Add To Cart</button>
     <p class = "discount-rate">-50%</p>
     <h3 class ="product-title">${product.title}</h3>
     <div class="product-prices-container">
-      <p class ="product-price-discounted">$${(product.price * 0.5).toFixed(2)}</p>
+      <p class ="product-price-discounted">$${(product.price * 0.5).toFixed(
+        2
+      )}</p>
       <s class ="product-price"> $${product.price}</s>
     </div>
     <div class="product-card-icons">
-      <img onclick="deleteFromWishlist(${product.id})" src="images/trash.svg" class="trash-icon" />
+      <img onclick="deleteFromWishlist(${
+        product.id
+      })" src="images/trash.svg" class="trash-icon" />
     </div>
     </div>`;
       })
@@ -137,13 +144,14 @@ getWishlistProducts();
 
 function deleteFromWishlist(deletedProductId) {
   const wishlistProducts =
-     JSON.parse(localStorage.getItem("wishlistProducts")) || [];
+    JSON.parse(localStorage.getItem("wishlistProducts")) || [];
   const filteredProducts = wishlistProducts.filter(
     (product) => product.id !== deletedProductId
   );
   localStorage.setItem("wishlistProducts", JSON.stringify(filteredProducts));
   getWishlistProducts();
   console.log(products);
+  addToWishCount();
 }
 
 function addToCart(productId) {
@@ -181,3 +189,29 @@ function moveAllToBag() {
     JSON.stringify([...cartProducts, ...filteredProducts])
   );
 }
+
+// Quantity icon start
+
+function addToWishCount() {
+  const wishCount = JSON.parse(localStorage.getItem("wishlistProducts") || []);
+  const wishItemCountElement = document.getElementById("wish-item-count");
+  if (wishCount.length > 0) {
+    wishItemCountElement.textContent = `${wishCount.length}`;
+    wishItemCountElement.classList.add("quantity-icon");
+  } else {
+    wishItemCountElement.textContent = ``;
+    wishItemCountElement.classList.remove("quantity-icon");
+  }
+}
+addToWishCount();
+
+function addToCartCount() {
+  const cartCount = JSON.parse(localStorage.getItem("cartProducts") || []);
+  const totalQuantity = cartCount.reduce((acc, product) => {
+    return acc + product.quantity;
+  }, 0);
+  const cartItemCountElement = document.getElementById("cart-item-count");
+  cartItemCountElement.textContent = `${totalQuantity}`;
+}
+addToCartCount();
+// Quantity icon end
