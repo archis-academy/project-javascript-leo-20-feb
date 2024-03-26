@@ -223,7 +223,7 @@ function showProducts() {
     .join("");
 
   setHeartIcons();
-  setCartIcons();
+  setCartIcons('cartIcon');
 }
 function getStars(rating) {
   let stars = ``;
@@ -399,7 +399,7 @@ function showAllProducts() {
     .join("");
 
   setHeartIcons();
-  setCartIcons();
+  setCartIcons('cartIcon');
 }
 
 function setHeartIcons() {
@@ -417,11 +417,11 @@ function setHeartIcons() {
     }
   });
 }
-function setCartIcons() {
+function setCartIcons(icon) {
   const cartProducts = JSON.parse(localStorage.getItem("cartProducts")) || [];
   cartProducts.forEach((product) => {
     if (product.id) {
-      const cartIcon = document.getElementById(`cartIcon${product.id}`);
+      const cartIcon = document.getElementById(`${icon + product.id}`);
       if (cartIcon) {
         cartIcon.setAttribute("src", "images/check-icon.svg");
       }
@@ -588,5 +588,5 @@ function exploreProducts() {
     })
     .join("");
   setHeartIcons();
-  setCartIcons();
+  setCartIcons('exploreCartIcon');
 }
