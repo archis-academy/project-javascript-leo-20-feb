@@ -672,7 +672,7 @@ body {
   padding: 5px 5px 0 5px;
   border-radius: 50%;
 }
-/* MÜCAHİT BEST SELLING PRODUCTS START */
+/* Mücahit Best Selling Products Start */
 .best-selling-products {
   max-width: 1300px;
   margin: 0 auto;
@@ -684,7 +684,7 @@ body {
   gap: 20px;
   align-items: center;
   color: #db4444;
-  font-size: 20px;
+  font-size: 16px;
 }
 
 .best-selling-title img {
@@ -696,10 +696,12 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-top: 20px;
 }
 
 .best-selling-subtitle h2 {
-  font-size: 40px;
+  font-family: "Inter", sans-serif;
+  font-size: 36px;
   font-weight: 600;
 }
 
@@ -715,40 +717,21 @@ body {
   border-radius: 5px;
 }
 
-.best-selling-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 30px;
-}
-
-.best-selling-card {
-  position: relative;
-}
-
-.image-photo {
-  width: 200px;
-  padding: 50px;
-}
-
-.best-selling-price {
+.best-view-all-btn {
   display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 30px;
-}
-
-.best-selling-comment {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.icons {
-  position: absolute;
-  right: 10px;
-  margin-top: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+  border-radius: 4px;
+  background-color: #db4444;
+  color: #fafafa;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  width: 150px;
+  height: 56px;
+  cursor: pointer;
+  border: none;
 }
 
 .best-products-container {
@@ -764,11 +747,12 @@ body {
 
 .best-products > img {
   width: 100%;
-  height: 300px;
+  height: 250px;
 }
 
 .best-products-title {
-  height: 60px;
+  height: 160px;
+  margin-top: 10px;
 }
 
 .best-products-price {
@@ -804,14 +788,6 @@ body {
   cursor: pointer;
 }
 
-.wishlist-img:hover {
-  width: 35px;
-}
-
-.cart-img:hover {
-  width: 35px;
-}
-
 .sale-price {
   position: absolute;
   background-color: red;
@@ -825,7 +801,7 @@ body {
   top: 0;
 }
 
-/* MÜCAHİT BEST SELLING PRODUCTS END */
+/* Mücahit Best Selling Products End */
 
 /* Mücahit Explore Our Products Start */
 .explore-our-products {
@@ -840,6 +816,36 @@ body {
   align-items: center;
   color: #db4444;
   font-size: 20px;
+}
+.explore-products-subtitle {
+  font-family: "Inter", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+.explore-view-all-btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px 0;
+}
+
+.explore-view-all-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  background-color: #db4444;
+  color: #fafafa;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  width: 234px;
+  height: 56px;
+  cursor: pointer;
+  border: none;
 }
 
 .explore-products-container {
@@ -858,6 +864,25 @@ body {
   position: relative;
 }
 
+.explore-products-title {
+  height: 150px;
+}
+
+.explore-products-price-rate {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.explore-product-price {
+  color: #db4444;
+}
+
+.explore-products-rate {
+  color: #7d8184;
+}
+
 .explore-wishlist-and-cart {
   display: flex;
   flex-direction: column;
@@ -867,4 +892,22 @@ body {
   top: -8px;
   cursor: pointer;
 }
+
+.explore-add-to-cart-btn {
+  position: relative;
+  width: 100%;
+  background-color: black;
+  color: white;
+  text-align: center;
+  opacity: 0;
+  padding: 10px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.explore-products:hover .explore-add-to-cart-btn {
+  opacity: 1;
+}
+
 /* Mücahit Explore Our Products End */
