@@ -57,8 +57,10 @@
               <div id="product-list"></div>
             </div>
             <a href="wishlist.html"
-              ><img src="images/wishlist-icon.svg" alt="wishlist-icon"
-            /></a>
+              ><img src="images/wishlist-icon.svg" alt="wishlist-icon" /><span
+                id="wish-item-count"
+              ></span
+            ></a>
             <a href="cart.html"
               ><img src="images/Cart1.png" alt="cart-icon"
             /></a>
@@ -66,7 +68,18 @@
         </div>
       </div>
     </header>
-
+    <div class="wishlist-container">
+      <div class="title">
+        <h1 class="wishlist-counter"></h1>
+        <button class="move-all-to-bag-btn" onclick="moveAllToBag()">
+          Move All To Bag
+        </button>
+      </div>
+      <div class="wishlist-item-container">
+        <div class="product-carousel" id="productCarousel"></div>
+        <div class="wishlist-is-empty"></div>
+      </div>
+    </div>
     <footer class="footer">
       <div class="container">
         <div class="row">

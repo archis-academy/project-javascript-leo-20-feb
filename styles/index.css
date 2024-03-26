@@ -3,7 +3,7 @@
   display: flex;
   max-width: 1300px;
   margin: 0 auto;
-  max-height: 410px;
+  max-height: 400px;
 }
 
 /* Aside start*/
@@ -15,7 +15,7 @@
   border-right: 1.5px solid #c1c0c0;
 }
 
-.header-as-container aside nav > ul {
+.header-as-container aside nav>ul {
   display: flex;
   flex-direction: column;
   gap: 19px;
@@ -64,7 +64,7 @@
   height: 100%;
 }
 
-.my-slides > img {
+.my-slides>img {
   width: 100%;
   height: 100%;
 }
@@ -247,12 +247,15 @@
   max-width: 1300px;
   display: flex;
   flex-direction: column;
-  margin: 50px auto;
+  margin: 100px auto;
+  padding-bottom: 80px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
 }
 
 .todays-products-title-container {
   display: flex;
   align-items: center;
+  margin: 30px 0;
 }
 
 .title-rectangle {
@@ -277,16 +280,44 @@
   font-style: normal;
   color: black;
   font-size: 36px;
+  position: absolute;
+  display: flex;
 }
 
 .flash-sales-container {
   display: flex;
   justify-content: space-between;
+  align-items: flex-end;
   margin: 20px 0;
+}
+
+.flash-sales-counter-container {
+  display: flex;
+  gap: 10px;
+  margin-left: 250px;
+  position: relative;
+}
+
+.counter-info {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  color: black;
+  font-size: 12px;
+}
+
+.flash-sales-counter {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  color: black;
+  font-size: 32px;
+
 }
 
 .carousel-container {
   position: relative;
+  margin: 50px 0;
 }
 
 .btn-container {
@@ -310,13 +341,13 @@
 }
 
 .product-carousel {
-  display: flex;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 50px;
 }
 
-.product-card {
+.product-card,
+.best-products {
   font-family: "Poppins", sans-serif;
   font-weight: 500;
   font-style: normal;
@@ -325,41 +356,53 @@
   padding: 35px;
 }
 
-.product-title {
+.product-title,
+.best-products-title {
   height: 150px;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 16px;
 }
 
-.product-card-img {
+.product-card-img,
+.best-products-img {
   width: 100%;
   height: 250px;
 }
 
-.product.title {
-  font-size: 16px;
-}
-
-.product-prices-container {
+.product-prices-container,
+.best-products-price-container {
   display: flex;
   align-items: center;
   gap: 15px;
 }
 
-.product-price {
+.product-price,
+.best-products-price {
   opacity: 50%;
 }
 
-.product-price-discounted {
+.product-price-discounted,
+.best-products-price-discounted {
   color: #db4444;
 }
 
-.product-card-icons {
+.product-rate,
+.best-products-rate {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  color: #7d8184;
+  font-weight: 500;
+}
+
+.product-card-icons,
+.wishlist-and-cart {
   display: flex;
   flex-direction: column;
   position: absolute;
-  width: 24px;
+  width: 30px;
   top: 0px;
   right: 0px;
   cursor: pointer;
@@ -405,18 +448,52 @@
   opacity: 1;
 }
 
-.discount-rate {
+.discount-rate,
+.sale-price {
   display: flex;
   background-color: #db4444;
   color: white;
   border-radius: 4px;
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 400;
-  width: 30px;
   padding: 5px;
+  width: 55px;
+  justify-content: center;
   top: 0px;
-  left: 0px;
+  left: 5px;
   position: absolute;
+}
+
+@media (max-width: 575px) {
+
+  .flash-sales-title {
+    font-size: 18px;
+  }
+
+  .flash-sales-counter-container {
+    transform: scale(0.5);
+    margin-left: 45px;
+    align-items: flex-end;
+  }
+
+  .product-carousel {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+    width: 90%;
+  }
+
+  .product-card-img {
+    height: 150px;
+  }
+
+  .product-title,
+  .product-price-discounted,
+  .product-price,
+  .product-card p {
+    font-size: 12px;
+  }
+
 }
 
 /* Yüsra PR-2 Homepage Todays Products End */
@@ -537,6 +614,7 @@
 }
 
 @media (max-width: 460px) {
+
   .move-to-left-icon,
   .move-to-right-icon {
     width: 30px;
@@ -741,11 +819,11 @@ body {
   margin-top: 40px;
 }
 
-.best-products {
+ .best-products {
   position: relative;
 }
 
-.best-products > img {
+.best-products>img {
   width: 100%;
   height: 250px;
 }
@@ -776,9 +854,8 @@ body {
   gap: 20px;
   color: #7d8184;
   font-weight: 500;
-}
-
-.wishlist-and-cart {
+} 
+ .wishlist-and-cart {
   display: flex;
   flex-direction: column;
   width: 30px;
@@ -786,9 +863,10 @@ body {
   right: -35px;
   top: -8px;
   cursor: pointer;
-}
+ }
 
-.sale-price {
+
+ .sale-price {
   position: absolute;
   background-color: red;
   color: white;
@@ -799,7 +877,7 @@ body {
   font-size: 14px;
   padding: 0 5px;
   top: 0;
-}
+} 
 
 /* Mücahit Best Selling Products End */
 

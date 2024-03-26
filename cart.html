@@ -57,16 +57,66 @@
               <div id="product-list"></div>
             </div>
             <a href="wishlist.html"
-              ><img src="images/wishlist-icon.svg" alt="wishlist-icon"
-            /></a>
+              ><img src="images/wishlist-icon.svg" alt="wishlist-icon" /><span
+                id="wish-item-count"
+              ></span
+            ></a>
             <a href="cart.html"
-              ><img src="images/Cart1.png" alt="cart-icon"
-            /></a>
+              ><img src="images/Cart1.png" alt="cart-icon" /><span
+                id="cart-item-count"
+              ></span
+            ></a>
           </div>
         </div>
       </div>
     </header>
 
+    <main>
+      <p class="links">
+        <a class="inactive-link" href="index.html">Home</a> /
+        <a href="cart.html">Cart</a>
+      </p>
+      <div class="empty-container">
+        <div class="table-container">
+          <table>
+            <tr>
+              <td>Product</td>
+              <td>Price</td>
+              <td>Quantity</td>
+              <td>Subtotal</td>
+            </tr>
+          </table>
+          <table class="products-table"></table>
+        </div>
+        <div class="buttons">
+          <button><a href="index.html">Return To Shop</a></button
+          ><button class="update-btn">Update Cart</button>
+        </div>
+        <div class="coupon-total-box">
+          <div class="coupon-box">
+            <input type="text" placeholder="Coupon Code" />
+            <button class="red-button">Apply Coupon</button>
+          </div>
+          <div class="total-box">
+            <p>Cart Total</p>
+            <div class="subtotal">
+              <p>Subtotal:</p>
+              <span></span>
+            </div>
+            <div class="shipping">
+              <p>Shipping:</p>
+              <span>Free</span>
+            </div>
+            <div class="total">
+              <p>Total:</p>
+
+              <span></span>
+            </div>
+            <button class="red-button">Process To Checkout</button>
+          </div>
+        </div>
+      </div>
+    </main>
     <footer class="footer">
       <div class="container">
         <div class="row">
