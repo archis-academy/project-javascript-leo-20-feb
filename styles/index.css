@@ -341,13 +341,13 @@
 }
 
 .product-carousel {
-  display: flex;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 50px;
 }
 
-.product-card {
+.product-card,
+.best-products {
   font-family: "Poppins", sans-serif;
   font-weight: 500;
   font-style: normal;
@@ -356,41 +356,53 @@
   padding: 35px;
 }
 
-.product-title {
+.product-title,
+.best-products-title {
   height: 150px;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 16px;
 }
 
-.product-card-img {
+.product-card-img,
+.best-products-img {
   width: 100%;
   height: 250px;
 }
 
-.product.title {
-  font-size: 16px;
-}
-
-.product-prices-container {
+.product-prices-container,
+.best-products-price-container {
   display: flex;
   align-items: center;
   gap: 15px;
 }
 
-.product-price {
+.product-price,
+.best-products-price {
   opacity: 50%;
 }
 
-.product-price-discounted {
+.product-price-discounted,
+.best-products-price-discounted {
   color: #db4444;
 }
 
-.product-card-icons {
+.product-rate,
+.best-products-rate {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  color: #7d8184;
+  font-weight: 500;
+}
+
+.product-card-icons,
+.wishlist-and-cart {
   display: flex;
   flex-direction: column;
   position: absolute;
-  width: 24px;
+  width: 30px;
   top: 0px;
   right: 0px;
   cursor: pointer;
@@ -436,16 +448,19 @@
   opacity: 1;
 }
 
-.discount-rate {
+.discount-rate,
+.sale-price {
   display: flex;
   background-color: #db4444;
   color: white;
   border-radius: 4px;
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 400;
   padding: 5px;
+  width: 55px;
+  justify-content: center;
   top: 0px;
-  left: 0px;
+  left: 5px;
   position: absolute;
 }
 
@@ -779,42 +794,6 @@ body {
   border-radius: 5px;
 }
 
-.best-selling-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 30px;
-}
-
-.best-selling-card {
-  position: relative;
-}
-
-.image-photo {
-  width: 200px;
-  padding: 50px;
-}
-
-.best-selling-price {
-  display: flex;
-  align-items: center;
-  gap: 30px;
-}
-
-.best-selling-comment {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.icons {
-  position: absolute;
-  right: 10px;
-  margin-top: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
 .best-products-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -822,7 +801,7 @@ body {
   margin-top: 40px;
 }
 
-.best-products {
+/* .best-products {
   position: relative;
 }
 
@@ -856,9 +835,8 @@ body {
   gap: 20px;
   color: #7d8184;
   font-weight: 500;
-}
-
-.wishlist-and-cart {
+} 
+ .wishlist-and-cart {
   display: flex;
   flex-direction: column;
   width: 30px;
@@ -866,7 +844,7 @@ body {
   right: -35px;
   top: -8px;
   cursor: pointer;
-}
+} */
 
 .wishlist-img:hover {
   width: 35px;
@@ -876,7 +854,7 @@ body {
   width: 35px;
 }
 
-.sale-price {
+/* .sale-price {
   position: absolute;
   background-color: red;
   color: white;
@@ -887,6 +865,6 @@ body {
   font-size: 14px;
   padding: 0 5px;
   top: 0;
-}
+} */
 
 /* MÜCAHİT BEST SELLING PRODUCTS END */
