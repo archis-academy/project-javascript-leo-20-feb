@@ -213,7 +213,7 @@ function showProducts() {
                         </svg>
                         <img onclick="addToCart(${
                           product.id
-                        })" src="images/cart-icon.svg"  class="cart-icon" id="cartIcon${
+                        }, 'cartIcon${product.id}')" src="images/cart-icon.svg"  class="cart-icon" id="cartIcon${
         product.id
       }" />
                      </div>
@@ -304,11 +304,10 @@ function deleteFromWishlist(deletedProductId, iconState) {
   localStorage.setItem("wishlistProducts", JSON.stringify(filteredProducts));
 }
 
-function addToCart(productId) {
+function addToCart(productId, icon) {
   const cartProducts = JSON.parse(localStorage.getItem("cartProducts")) || [];
 
   const cartProduct = cartProducts.find((product) => product.id === productId);
-
   if (!cartProduct) {
     const productToAdd = allProducts.find(
       (product) => product.id === productId
@@ -317,15 +316,16 @@ function addToCart(productId) {
       "cartProducts",
       JSON.stringify([...cartProducts, productToAdd])
     );
-    const cartIcon = document.getElementById(`cartIcon${productId}`);
+    const cartIcon = document.getElementById(`${icon}`);
+    console.log(cartIcon, "dynamic cart icon");
     cartIcon.setAttribute("src", "images/check-icon.svg");
   } else {
-    deleteFromCart(productId);
+    deleteFromCart(productId, icon);
   }
 }
 
-function deleteFromCart(deletedProductId) {
-  const cartIcon = document.getElementById(`cartIcon${deletedProductId}`);
+function deleteFromCart(deletedProductId, icon) {
+  const cartIcon = document.getElementById(`${icon}`);
   cartIcon.setAttribute("src", "images/cart-icon.svg");
 
   const cartProducts = JSON.parse(localStorage.getItem("cartProducts")) || [];
@@ -389,7 +389,7 @@ function showAllProducts() {
                         </svg>
                         <img onclick="addToCart(${
                           product.id
-                        })" src="images/cart-icon.svg"  class="cart-icon" id="cartIcon${
+                        }, 'cartIcon${product.id}')" src="images/cart-icon.svg"  class="cart-icon" id="cartIcon${
         product.id
       }" />
                      </div>
@@ -543,7 +543,7 @@ function getBestSellingProducts() {
                         </svg>
               <img class="cart-img" onClick="addToCart(${
                 product.id
-              })" src="images/cart-icon.svg"/>
+              }, 'bestSellingIcon${product.id}')"  id="bestSellingIcon${product.id}" src="images/cart-icon.svg"/>
               </div>
               <span class="sale-price">%30</span>
             </div>`;
@@ -582,7 +582,7 @@ function exploreProducts() {
                         </svg>
               <img onClick="addToCart(${
                 product.id
-              })" src="images/cart-icon.svg"/>
+              }, 'exploreCartIcon${product.id}')" id="exploreCartIcon${product.id}" src="images/cart-icon.svg"/>
               </div>
     </div>`;
     })
