@@ -163,7 +163,7 @@ setInterval(() => {
 
 //Yüsra PR-2 Homepage Todays Products
 
-//beginning of counter 
+//beginning of counter
 const targetDate = new Date("2024-03-29");
 
 function countdown() {
@@ -171,13 +171,16 @@ function countdown() {
   const distance = targetDate - currentDate;
 
   const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const hours = Math.floor(
+    (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+  );
   const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
   const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
   document.getElementById("counter-days").innerHTML = formatTime(days) + " :";
   document.getElementById("counter-hours").innerHTML = formatTime(hours) + " :";
-  document.getElementById("counter-minutes").innerHTML = formatTime(minutes) + " :";
+  document.getElementById("counter-minutes").innerHTML =
+    formatTime(minutes) + " :";
   document.getElementById("counter-seconds").innerHTML = formatTime(seconds);
 
   if (distance < 0) {
@@ -198,7 +201,6 @@ setInterval(countdown, 1000);
 
 //end of counter
 
-
 const productCarousel = document.getElementById("productCarousel");
 let currentIndex = 6;
 
@@ -209,6 +211,7 @@ async function getProducts() {
     allProducts = data;
     showProducts();
     getBestSellingProducts();
+    exploreProducts();
   } catch (error) {
     console.error("Hata oluştu.", error);
   }
@@ -220,31 +223,38 @@ function showProducts() {
   productCarousel.innerHTML = productsToShow
     .map((product) => {
       return `<div class="product-card">
-                    <img class ="product-card-img" src ="${product.image
-        }" alt = "${product.title}" />
-                    <button onclick="addToCart(${product.id
-        })" class="add-to-cart-btn" >Add To Cart</button>
+                    <img class ="product-card-img" src ="${
+                      product.image
+                    }" alt = "${product.title}" />
+                    <button onclick="addToCart(${
+                      product.id
+                    })" class="add-to-cart-btn" >Add To Cart</button>
                     <p class = "discount-rate">-50%</p>
                     <h3 class ="product-title">${product.title}</h3>
                     <div class="product-prices-container">
                         <p class ="product-price-discounted">$${(
-          product.price * 0.5
-        ).toFixed(2)}</p>
+                          product.price * 0.5
+                        ).toFixed(2)}</p>
                         <s class ="product-price"> $${product.price}</s>
                      </div>
-                    <p>${getStars(product.rating.rate)} (${product.rating.count
-        })</p>
+                    <p>${getStars(product.rating.rate)} (${
+        product.rating.count
+      })</p>
 
     
                     <div class="product-card-icons">
-                        <svg onclick="addToWishlist(${product.id
-        }, 'flashProducts')" width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path id="heartIcon${product.id
-        }" d="M11 7C8.239 7 6 9.216 6 11.95C6 14.157 6.875 19.395 15.488 24.69C15.6423 24.7839 15.8194 24.8335 16 24.8335C16.1806 24.8335 16.3577 24.7839 16.512 24.69C25.125 19.395 26 14.157 26 11.95C26 9.216 23.761 7 21 7C18.239 7 16 10 16 10C16 10 13.761 7 11 7Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <svg onclick="addToWishlist(${
+                          product.id
+                        }, 'flashProducts')" width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path id="heartIcon${
+                            product.id
+                          }" d="M11 7C8.239 7 6 9.216 6 11.95C6 14.157 6.875 19.395 15.488 24.69C15.6423 24.7839 15.8194 24.8335 16 24.8335C16.1806 24.8335 16.3577 24.7839 16.512 24.69C25.125 19.395 26 14.157 26 11.95C26 9.216 23.761 7 21 7C18.239 7 16 10 16 10C16 10 13.761 7 11 7Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
-                        <img onclick="addToCart(${product.id
-        })" src="images/cart-icon.svg"  class="cart-icon" id="cartIcon${product.id
-        }" />
+                        <img onclick="addToCart(${product.id}, 'cartIcon${
+        product.id
+      }')" src="images/cart-icon.svg"  class="cart-icon" id="cartIcon${
+        product.id
+      }" />
                      </div>
                      
                 </div>`;
@@ -252,7 +262,7 @@ function showProducts() {
     .join("");
 
   setHeartIcons();
-  setCartIcons();
+  setCartIcons("cartIcon");
 }
 function getStars(rating) {
   let stars = ``;
@@ -269,10 +279,21 @@ function addToWishlist(productId, iconState) {
   //   heartIcon = document.getElementById(`heartIcon${productId}`);
   // }
 
-  const heartIconParameter =
-    iconState === "bestSelling"
-      ? `heartIconBestSelling${productId}`
-      : `heartIcon${productId}`;
+  let heartIconParameter = "";
+
+  switch (iconState) {
+    case "bestSelling":
+      heartIconParameter = `heartIconBestSelling${productId}`;
+      break;
+    case "flashProducts":
+      heartIconParameter = `heartIcon${productId}`;
+      break;
+    case "exploreProducts":
+      heartIconParameter = `heartIconExploreProducts${productId}`;
+      break;
+    default:
+      break;
+  }
 
   const heartIcon = document.getElementById(heartIconParameter);
 
@@ -300,10 +321,21 @@ function addToWishlist(productId, iconState) {
 }
 
 function deleteFromWishlist(deletedProductId, iconState) {
-  const heartIconParameter =
-    iconState === "bestSelling"
-      ? `heartIconBestSelling${deletedProductId}`
-      : `heartIcon${deletedProductId}`;
+  let heartIconParameter = "";
+
+  switch (iconState) {
+    case "bestSelling":
+      heartIconParameter = `heartIconBestSelling${deletedProductId}`;
+      break;
+    case "flashProducts":
+      heartIconParameter = `heartIcon${deletedProductId}`;
+      break;
+    case "exploreProducts":
+      heartIconParameter = `heartIconExploreProducts${deletedProductId}`;
+      break;
+    default:
+      break;
+  }
 
   const heartIcon = document.getElementById(heartIconParameter);
 
@@ -319,11 +351,10 @@ function deleteFromWishlist(deletedProductId, iconState) {
   addToWishCount();
 }
 
-function addToCart(productId) {
+function addToCart(productId, icon) {
   const cartProducts = JSON.parse(localStorage.getItem("cartProducts")) || [];
 
   const cartProduct = cartProducts.find((product) => product.id === productId);
-
   if (!cartProduct) {
     const productToAdd = allProducts.find(
       (product) => product.id === productId
@@ -332,15 +363,16 @@ function addToCart(productId) {
       "cartProducts",
       JSON.stringify([...cartProducts, productToAdd])
     );
-    const cartIcon = document.getElementById(`cartIcon${productId}`);
+    const cartIcon = document.getElementById(`${icon}`);
+    console.log(cartIcon, "dynamic cart icon");
     cartIcon.setAttribute("src", "images/check-icon.svg");
   } else {
-    deleteFromCart(productId);
+    deleteFromCart(productId, icon);
   }
 }
 
-function deleteFromCart(deletedProductId) {
-  const cartIcon = document.getElementById(`cartIcon${deletedProductId}`);
+function deleteFromCart(deletedProductId, icon) {
+  const cartIcon = document.getElementById(`${icon}`);
   cartIcon.setAttribute("src", "images/cart-icon.svg");
 
   const cartProducts = JSON.parse(localStorage.getItem("cartProducts")) || [];
@@ -375,31 +407,38 @@ function showAllProducts() {
   productCarousel.innerHTML = allProducts
     .map((product) => {
       return `<div class="product-card">
-                    <img class ="product-card-img" src ="${product.image
-        }" alt = "${product.title}" />
-                    <button onclick="addToCart(${product.id
-        })" class="add-to-cart-btn" >Add To Cart</button>
+                    <img class ="product-card-img" src ="${
+                      product.image
+                    }" alt = "${product.title}" />
+                    <button onclick="addToCart(${
+                      product.id
+                    })" class="add-to-cart-btn" >Add To Cart</button>
                     <p class = "discount-rate">-50%</p>
                     <h3 class ="product-title">${product.title}</h3>
                     <div class="product-prices-container">
                         <p class ="product-price-discounted">$${(
-          product.price * 0.5
-        ).toFixed(2)}</p>
+                          product.price * 0.5
+                        ).toFixed(2)}</p>
                         <s class ="product-price"> $${product.price}</s>
                      </div>
-                    <p>${getStars(product.rating.rate)} (${product.rating.count
-        })</p>
+                    <p>${getStars(product.rating.rate)} (${
+        product.rating.count
+      })</p>
 
     
                     <div class="product-card-icons">
-                        <svg onclick="addToWishlist(${product.id
-        }, "flashProducts")" width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path id="heartIcon${product.id
-        }" d="M11 7C8.239 7 6 9.216 6 11.95C6 14.157 6.875 19.395 15.488 24.69C15.6423 24.7839 15.8194 24.8335 16 24.8335C16.1806 24.8335 16.3577 24.7839 16.512 24.69C25.125 19.395 26 14.157 26 11.95C26 9.216 23.761 7 21 7C18.239 7 16 10 16 10C16 10 13.761 7 11 7Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <svg onclick="addToWishlist(${
+                          product.id
+                        }, "flashProducts")" width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path id="heartIcon${
+                            product.id
+                          }" d="M11 7C8.239 7 6 9.216 6 11.95C6 14.157 6.875 19.395 15.488 24.69C15.6423 24.7839 15.8194 24.8335 16 24.8335C16.1806 24.8335 16.3577 24.7839 16.512 24.69C25.125 19.395 26 14.157 26 11.95C26 9.216 23.761 7 21 7C18.239 7 16 10 16 10C16 10 13.761 7 11 7Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
-                        <img onclick="addToCart(${product.id
-        })" src="images/cart-icon.svg"  class="cart-icon" id="cartIcon${product.id
-        }" />
+                         <img onclick="addToCart(${product.id}, 'cartIcon${
+        product.id
+      }')" src="images/cart-icon.svg"  class="cart-icon" id="cartIcon${
+        product.id
+      }" />
                      </div>
                      
                 </div>`;
@@ -407,7 +446,7 @@ function showAllProducts() {
     .join("");
 
   setHeartIcons();
-  setCartIcons();
+  setCartIcons("cartIcon");
 }
 
 function setHeartIcons() {
@@ -425,11 +464,11 @@ function setHeartIcons() {
     }
   });
 }
-function setCartIcons() {
+function setCartIcons(icon) {
   const cartProducts = JSON.parse(localStorage.getItem("cartProducts")) || [];
   cartProducts.forEach((product) => {
     if (product.id) {
-      const cartIcon = document.getElementById(`cartIcon${product.id}`);
+      const cartIcon = document.getElementById(`${icon + product.id}`);
       if (cartIcon) {
         cartIcon.setAttribute("src", "images/check-icon.svg");
       }
@@ -529,8 +568,9 @@ function getBestSellingProducts() {
   bestProductsContainer.innerHTML = firstFourProducts
     .map((product) => {
       return `<div class="best-products">
-              <img class="best-products-img" src="${product.image}" alt="${product.title
-        }">
+              <img class="best-products-img" src="${product.image}" alt="${
+        product.title
+      }">
               <h3 class="best-products-title"> ${product.title}</h3>
               <div class="best-products-price">
               <p>$${discountPrice(product.price, 30)}</p>
@@ -541,13 +581,18 @@ function getBestSellingProducts() {
               <p>(${product.rating.count})</p>
               </div>
               <div class="wishlist-and-cart">
-               <svg onclick="addToWishlist(${product.id
-        }, 'bestSelling')" width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path id="heartIconBestSelling${product.id
-        }" d="M11 7C8.239 7 6 9.216 6 11.95C6 14.157 6.875 19.395 15.488 24.69C15.6423 24.7839 15.8194 24.8335 16 24.8335C16.1806 24.8335 16.3577 24.7839 16.512 24.69C25.125 19.395 26 14.157 26 11.95C26 9.216 23.761 7 21 7C18.239 7 16 10 16 10C16 10 13.761 7 11 7Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+               <svg onclick="addToWishlist(${
+                 product.id
+               }, 'bestSelling')" width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path id="heartIconBestSelling${
+                            product.id
+                          }" d="M11 7C8.239 7 6 9.216 6 11.95C6 14.157 6.875 19.395 15.488 24.69C15.6423 24.7839 15.8194 24.8335 16 24.8335C16.1806 24.8335 16.3577 24.7839 16.512 24.69C25.125 19.395 26 14.157 26 11.95C26 9.216 23.761 7 21 7C18.239 7 16 10 16 10C16 10 13.761 7 11 7Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
-              <img class="cart-img" onClick="addToCart(${product.id
-        })" src="images/cart-icon.svg"/>
+              <img class="cart-img" onClick="addToCart(${
+                product.id
+              }, 'bestSellingIcon${product.id}')"  id="bestSellingIcon${
+        product.id
+      }" src="images/cart-icon.svg"/>
               </div>
               <span class="sale-price">%30</span>
             </div>`;
@@ -585,3 +630,44 @@ function addToCartCount() {
 }
 addToCartCount();
 // Quantity icon end
+
+/* Mücahit Explore Our Products */
+
+const exploreProductsContainer = document.querySelector(
+  "#exploreProductsContainer"
+);
+
+function exploreProducts() {
+  const firstEightProducts = allProducts.slice(0, 8);
+
+  exploreProductsContainer.innerHTML = firstEightProducts
+    .map((product) => {
+      return `<div class="explore-products">
+    <img class="explore-products-img" src="${product.image}" alt="${
+        product.title
+      }">
+    <h3 class="explore-products-title">${product.title}</h3>
+    <p class="explore-product-price">$${product.price}</p>
+    <div class="explore-products-rate">
+              <p>${getStars(product.rating.rate)}</p>
+              <p>(${product.rating.count})</p>
+              </div>
+              <div class="explore-wishlist-and-cart">
+               <svg onclick="addToWishlist(${
+                 product.id
+               }, 'exploreProducts')" width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path id="heartIconExploreProducts${
+                            product.id
+                          }" d="M11 7C8.239 7 6 9.216 6 11.95C6 14.157 6.875 19.395 15.488 24.69C15.6423 24.7839 15.8194 24.8335 16 24.8335C16.1806 24.8335 16.3577 24.7839 16.512 24.69C25.125 19.395 26 14.157 26 11.95C26 9.216 23.761 7 21 7C18.239 7 16 10 16 10C16 10 13.761 7 11 7Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+              <img onClick="addToCart(${product.id}, 'exploreCartIcon${
+        product.id
+      }')" id="exploreCartIcon${product.id}" src="images/cart-icon.svg"/>
+              </div>
+    </div>`;
+    })
+    .join("");
+
+  setHeartIcons();
+  setCartIcons("exploreCartIcon");
+}

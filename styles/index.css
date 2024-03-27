@@ -15,7 +15,7 @@
   border-right: 1.5px solid #c1c0c0;
 }
 
-.header-as-container aside nav>ul {
+.header-as-container aside nav > ul {
   display: flex;
   flex-direction: column;
   gap: 19px;
@@ -64,7 +64,7 @@
   height: 100%;
 }
 
-.my-slides>img {
+.my-slides > img {
   width: 100%;
   height: 100%;
 }
@@ -312,7 +312,6 @@
   font-style: normal;
   color: black;
   font-size: 32px;
-
 }
 
 .carousel-container {
@@ -465,7 +464,6 @@
 }
 
 @media (max-width: 575px) {
-
   .flash-sales-title {
     font-size: 18px;
   }
@@ -493,7 +491,6 @@
   .product-card p {
     font-size: 12px;
   }
-
 }
 
 /* Yüsra PR-2 Homepage Todays Products End */
@@ -614,7 +611,6 @@
 }
 
 @media (max-width: 460px) {
-
   .move-to-left-icon,
   .move-to-right-icon {
     width: 30px;
@@ -868,3 +864,46 @@ body {
 } */
 
 /* MÜCAHİT BEST SELLING PRODUCTS END */
+
+
+/* Mücahit Explore Our Products Start */
+.explore-our-products {
+  max-width: 1300px;
+  margin: 50px auto;
+  font-family: "Poppins", sans-serif;
+}
+
+.explore-our-products-title {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  color: #db4444;
+  font-size: 20px;
+}
+
+.explore-products-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 100px;
+  margin-top: 40px;
+}
+
+.explore-products-img {
+  width: 100%;
+  height: 250px;
+}
+
+.explore-products {
+  position: relative;
+}
+
+.explore-wishlist-and-cart {
+  display: flex;
+  flex-direction: column;
+  width: 30px;
+  position: absolute;
+  right: -35px;
+  top: -8px;
+  cursor: pointer;
+}
+/* Mücahit Explore Our Products End */
