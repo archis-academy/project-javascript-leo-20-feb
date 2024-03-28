@@ -237,9 +237,10 @@ function showProducts() {
                         ).toFixed(2)}</p>
                         <s class ="product-price"> $${product.price}</s>
                      </div>
-                    <p>${getStars(product.rating.rate)} (${
-        product.rating.count
-      })</p>
+                     <div class="products-rate">
+                     <p class="stars">${getStars(product.rating.rate)}</p>
+                     <p class="product-rate">(${product.rating.count})</p>
+                     </div> 
 
     
                     <div class="product-card-icons">
@@ -361,7 +362,7 @@ function addToCart(productId, icon) {
     );
     localStorage.setItem(
       "cartProducts",
-      JSON.stringify([...cartProducts, productToAdd])
+      JSON.stringify([...cartProducts, { ...productToAdd, quantity: 1 }])
     );
     const cartIcon = document.getElementById(`${icon}`);
     console.log(cartIcon, "dynamic cart icon");
@@ -369,6 +370,7 @@ function addToCart(productId, icon) {
   } else {
     deleteFromCart(productId, icon);
   }
+  addToCartCount();
 }
 
 function deleteFromCart(deletedProductId, icon) {
@@ -380,6 +382,7 @@ function deleteFromCart(deletedProductId, icon) {
     (product) => product.id !== deletedProductId
   );
   localStorage.setItem("cartProducts", JSON.stringify(filteredProducts));
+  addToCartCount();
 }
 
 function nextProduct() {
@@ -421,9 +424,10 @@ function showAllProducts() {
                         ).toFixed(2)}</p>
                         <s class ="product-price"> $${product.price}</s>
                      </div>
-                    <p>${getStars(product.rating.rate)} (${
-        product.rating.count
-      })</p>
+                     <div class="products-rate">
+                     <p class="stars" >${getStars(product.rating.rate)}</p>
+                     <p class="product-rate">(${product.rating.count})</p>
+                     </div>
 
     
                     <div class="product-card-icons">
@@ -559,8 +563,8 @@ movetoRightIcon.addEventListener("click", () => {
 
 const bestProductsContainer = document.querySelector("#bestProductsContainer");
 
-let discountPrice = (price, discount) =>
-  (price - (price * discount) / 100).toFixed(2);
+// let discountPrice = (price, discount) =>
+//   (price - (price * discount) / 100).toFixed(2);
 
 function getBestSellingProducts() {
   const firstFourProducts = allProducts.slice(0, 4);
@@ -572,13 +576,15 @@ function getBestSellingProducts() {
         product.title
       }">
               <h3 class="best-products-title"> ${product.title}</h3>
-              <div class="best-products-price">
-              <p>$${discountPrice(product.price, 30)}</p>
-              <s>$${product.price}</s>
-              </div>
+              <div class="best-product-prices-container">
+                        <p class ="best-product-price-discounted">$${(
+                          product.price * 0.3
+                        ).toFixed(2)}</p>
+                        <s class ="best-product-price"> $${product.price}</s>
+                     </div>
               <div class="best-products-rate">
-              <p>${getStars(product.rating.rate)}</p>
-              <p>(${product.rating.count})</p>
+              <p class="stars">${getStars(product.rating.rate)}</p>
+              <p class="best-product-rate">(${product.rating.count})</p>
               </div>
               <div class="wishlist-and-cart">
                <svg onclick="addToWishlist(${
@@ -619,6 +625,7 @@ function addToCartCount() {
   const totalQuantity = cartCount.reduce((acc, product) => {
     return acc + product.quantity;
   }, 0);
+  console.log(totalQuantity);
   const cartItemCountElement = document.getElementById("cart-item-count");
   if (totalQuantity > 0) {
     cartItemCountElement.textContent = `${totalQuantity}`;
@@ -647,10 +654,11 @@ function exploreProducts() {
         product.title
       }">
     <h3 class="explore-products-title">${product.title}</h3>
-    <p class="explore-product-price">$${product.price}</p>
+    
     <div class="explore-products-rate">
-              <p>${getStars(product.rating.rate)}</p>
-              <p>(${product.rating.count})</p>
+    <p class="explore-product-price">$${product.price}</p>
+              <p class="stars">${getStars(product.rating.rate)}</p>
+              <p class="explore-product-rate">(${product.rating.count})</p>
               </div>
               <div class="explore-wishlist-and-cart">
                <svg onclick="addToWishlist(${

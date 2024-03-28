@@ -90,29 +90,6 @@ const couponInput = document.querySelector(".coupon-box input");
 const applyBtn = document.querySelector(".coupon-box button");
 const removeIcon = document.querySelector(".remove-icon");
 const emptyContainer = document.querySelector(".empty-container");
-const cartProductList = [
-  {
-    id: 1,
-    title: "gömlek",
-    image: "images/arrival1.png",
-    price: 100,
-    quantity: 2,
-  },
-  {
-    id: 2,
-    title: "gömlek",
-    image: "images/arrival2.png",
-    price: 100,
-    quantity: 2,
-  },
-  {
-    id: 3,
-    title: "gömlek",
-    image: "images/arrival3.png",
-    price: 100,
-    quantity: 2,
-  },
-];
 
 const coupons = [
   {
@@ -126,8 +103,6 @@ const coupons = [
     discount: 20,
   },
 ];
-
-localStorage.setItem("cartProducts", JSON.stringify(cartProductList));
 
 function renderCartProducts() {
   const cartProducts = JSON.parse(localStorage.getItem("cartProducts")) || [];
