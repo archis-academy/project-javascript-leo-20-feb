@@ -223,18 +223,16 @@ function showProducts() {
   productCarousel.innerHTML = productsToShow
     .map((product) => {
       return `<div class="product-card">
-                    <img class ="product-card-img" src ="${
-                      product.image
-                    }" alt = "${product.title}" />
-                    <button onclick="addToCart(${
-                      product.id
-                    })" class="add-to-cart-btn" >Add To Cart</button>
+                    <img class ="product-card-img" src ="${product.image
+        }" alt = "${product.title}" />
+                    <button onclick="addToCart(${product.id
+        })" class="add-to-cart-btn" >Add To Cart</button>
                     <p class = "discount-rate">-50%</p>
                     <h3 class ="product-title">${product.title}</h3>
                     <div class="product-prices-container">
                         <p class ="product-price-discounted">$${(
-                          product.price * 0.5
-                        ).toFixed(2)}</p>
+          product.price * 0.5
+        ).toFixed(2)}</p>
                         <s class ="product-price"> $${product.price}</s>
                      </div>
                      <div class="products-rate">
@@ -244,18 +242,14 @@ function showProducts() {
 
     
                     <div class="product-card-icons">
-                        <svg onclick="addToWishlist(${
-                          product.id
-                        }, 'flashProducts')" width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path id="heartIcon${
-                            product.id
-                          }" d="M11 7C8.239 7 6 9.216 6 11.95C6 14.157 6.875 19.395 15.488 24.69C15.6423 24.7839 15.8194 24.8335 16 24.8335C16.1806 24.8335 16.3577 24.7839 16.512 24.69C25.125 19.395 26 14.157 26 11.95C26 9.216 23.761 7 21 7C18.239 7 16 10 16 10C16 10 13.761 7 11 7Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <svg onclick="addToWishlist(${product.id
+        }, 'flashProducts')" width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path id="heartIcon${product.id
+        }" d="M11 7C8.239 7 6 9.216 6 11.95C6 14.157 6.875 19.395 15.488 24.69C15.6423 24.7839 15.8194 24.8335 16 24.8335C16.1806 24.8335 16.3577 24.7839 16.512 24.69C25.125 19.395 26 14.157 26 11.95C26 9.216 23.761 7 21 7C18.239 7 16 10 16 10C16 10 13.761 7 11 7Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
-                        <img onclick="addToCart(${product.id}, 'cartIcon${
-        product.id
-      }')" src="images/cart-icon.svg"  class="cart-icon" id="cartIcon${
-        product.id
-      }" />
+                        <img onclick="addToCart(${product.id}, 'cartIcon${product.id
+        }')" src="images/cart-icon.svg"  class="cart-icon" id="cartIcon${product.id
+        }" />
                      </div>
                      
                 </div>`;
@@ -410,18 +404,16 @@ function showAllProducts() {
   productCarousel.innerHTML = allProducts
     .map((product) => {
       return `<div class="product-card">
-                    <img class ="product-card-img" src ="${
-                      product.image
-                    }" alt = "${product.title}" />
-                    <button onclick="addToCart(${
-                      product.id
-                    })" class="add-to-cart-btn" >Add To Cart</button>
+                    <img class ="product-card-img" src ="${product.image
+        }" alt = "${product.title}" />
+                    <button onclick="addToCart(${product.id
+        })" class="add-to-cart-btn" >Add To Cart</button>
                     <p class = "discount-rate">-50%</p>
                     <h3 class ="product-title">${product.title}</h3>
                     <div class="product-prices-container">
                         <p class ="product-price-discounted">$${(
-                          product.price * 0.5
-                        ).toFixed(2)}</p>
+          product.price * 0.5
+        ).toFixed(2)}</p>
                         <s class ="product-price"> $${product.price}</s>
                      </div>
                      <div class="products-rate">
@@ -431,18 +423,14 @@ function showAllProducts() {
 
     
                     <div class="product-card-icons">
-                        <svg onclick="addToWishlist(${
-                          product.id
-                        }, "flashProducts")" width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path id="heartIcon${
-                            product.id
-                          }" d="M11 7C8.239 7 6 9.216 6 11.95C6 14.157 6.875 19.395 15.488 24.69C15.6423 24.7839 15.8194 24.8335 16 24.8335C16.1806 24.8335 16.3577 24.7839 16.512 24.69C25.125 19.395 26 14.157 26 11.95C26 9.216 23.761 7 21 7C18.239 7 16 10 16 10C16 10 13.761 7 11 7Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <svg onclick="addToWishlist(${product.id
+        }, "flashProducts")" width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path id="heartIcon${product.id
+        }" d="M11 7C8.239 7 6 9.216 6 11.95C6 14.157 6.875 19.395 15.488 24.69C15.6423 24.7839 15.8194 24.8335 16 24.8335C16.1806 24.8335 16.3577 24.7839 16.512 24.69C25.125 19.395 26 14.157 26 11.95C26 9.216 23.761 7 21 7C18.239 7 16 10 16 10C16 10 13.761 7 11 7Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
-                         <img onclick="addToCart(${product.id}, 'cartIcon${
-        product.id
-      }')" src="images/cart-icon.svg"  class="cart-icon" id="cartIcon${
-        product.id
-      }" />
+                         <img onclick="addToCart(${product.id}, 'cartIcon${product.id
+        }')" src="images/cart-icon.svg"  class="cart-icon" id="cartIcon${product.id
+        }" />
                      </div>
                      
                 </div>`;
@@ -559,6 +547,43 @@ movetoRightIcon.addEventListener("click", () => {
 });
 //Sebile/PR-3 Beginning of browse by category
 
+//beginning of counter
+const countdownTargetDate = new Date("2024-04-3");
+
+function productCountdown() {
+  const currentDate = new Date();
+  const distance = countdownTargetDate - currentDate;
+
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor(
+    (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+  );
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  document.getElementById("countdown-days").innerHTML = formatTime(days);
+  document.getElementById("countdown-hours").innerHTML = formatTime(hours);
+  document.getElementById("countdown-minutes").innerHTML =
+    formatTime(minutes);
+  document.getElementById("countdown-seconds").innerHTML = formatTime(seconds);
+
+  if (distance < 0) {
+    clearInterval(distance);
+    document.getElementById("countdown-days").innerHTML = "- ";
+    document.getElementById("countdown-hours").innerHTML = "- ";
+    document.getElementById("countdown-minutes").innerHTML = "- ";
+    document.getElementById("countdown-seconds").innerHTML = "- ";
+  }
+}
+
+function formatTime(time) {
+  return time < 10 ? `0${time}` : time;
+}
+
+productCountdown();
+setInterval(productCountdown, 1000);
+
+//end of counter
 /* BURASI BENİMKİ (MÜCAHİT) */
 
 const bestProductsContainer = document.querySelector("#bestProductsContainer");
@@ -572,14 +597,13 @@ function getBestSellingProducts() {
   bestProductsContainer.innerHTML = firstFourProducts
     .map((product) => {
       return `<div class="best-products">
-              <img class="best-products-img" src="${product.image}" alt="${
-        product.title
-      }">
+              <img class="best-products-img" src="${product.image}" alt="${product.title
+        }">
               <h3 class="best-products-title"> ${product.title}</h3>
               <div class="best-product-prices-container">
                         <p class ="best-product-price-discounted">$${(
-                          product.price * 0.3
-                        ).toFixed(2)}</p>
+          product.price * 0.3
+        ).toFixed(2)}</p>
                         <s class ="best-product-price"> $${product.price}</s>
                      </div>
               <div class="best-products-rate">
@@ -587,18 +611,14 @@ function getBestSellingProducts() {
               <p class="best-product-rate">(${product.rating.count})</p>
               </div>
               <div class="wishlist-and-cart">
-               <svg onclick="addToWishlist(${
-                 product.id
-               }, 'bestSelling')" width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path id="heartIconBestSelling${
-                            product.id
-                          }" d="M11 7C8.239 7 6 9.216 6 11.95C6 14.157 6.875 19.395 15.488 24.69C15.6423 24.7839 15.8194 24.8335 16 24.8335C16.1806 24.8335 16.3577 24.7839 16.512 24.69C25.125 19.395 26 14.157 26 11.95C26 9.216 23.761 7 21 7C18.239 7 16 10 16 10C16 10 13.761 7 11 7Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+               <svg onclick="addToWishlist(${product.id
+        }, 'bestSelling')" width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path id="heartIconBestSelling${product.id
+        }" d="M11 7C8.239 7 6 9.216 6 11.95C6 14.157 6.875 19.395 15.488 24.69C15.6423 24.7839 15.8194 24.8335 16 24.8335C16.1806 24.8335 16.3577 24.7839 16.512 24.69C25.125 19.395 26 14.157 26 11.95C26 9.216 23.761 7 21 7C18.239 7 16 10 16 10C16 10 13.761 7 11 7Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
-              <img class="cart-img" onClick="addToCart(${
-                product.id
-              }, 'bestSellingIcon${product.id}')"  id="bestSellingIcon${
-        product.id
-      }" src="images/cart-icon.svg"/>
+              <img class="cart-img" onClick="addToCart(${product.id
+        }, 'bestSellingIcon${product.id}')"  id="bestSellingIcon${product.id
+        }" src="images/cart-icon.svg"/>
               </div>
               <span class="sale-price">%30</span>
             </div>`;
@@ -650,9 +670,8 @@ function exploreProducts() {
   exploreProductsContainer.innerHTML = firstEightProducts
     .map((product) => {
       return `<div class="explore-products">
-    <img class="explore-products-img" src="${product.image}" alt="${
-        product.title
-      }">
+    <img class="explore-products-img" src="${product.image}" alt="${product.title
+        }">
     <h3 class="explore-products-title">${product.title}</h3>
     <p class="explore-product-price">$${product.price}</p>
     <div class="explore-products-rate">
@@ -660,16 +679,13 @@ function exploreProducts() {
               <p class="explore-product-rate">(${product.rating.count})</p>
               </div>
               <div class="explore-wishlist-and-cart">
-               <svg onclick="addToWishlist(${
-                 product.id
-               }, 'exploreProducts')" width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path id="heartIconExploreProducts${
-                            product.id
-                          }" d="M11 7C8.239 7 6 9.216 6 11.95C6 14.157 6.875 19.395 15.488 24.69C15.6423 24.7839 15.8194 24.8335 16 24.8335C16.1806 24.8335 16.3577 24.7839 16.512 24.69C25.125 19.395 26 14.157 26 11.95C26 9.216 23.761 7 21 7C18.239 7 16 10 16 10C16 10 13.761 7 11 7Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+               <svg onclick="addToWishlist(${product.id
+        }, 'exploreProducts')" width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path id="heartIconExploreProducts${product.id
+        }" d="M11 7C8.239 7 6 9.216 6 11.95C6 14.157 6.875 19.395 15.488 24.69C15.6423 24.7839 15.8194 24.8335 16 24.8335C16.1806 24.8335 16.3577 24.7839 16.512 24.69C25.125 19.395 26 14.157 26 11.95C26 9.216 23.761 7 21 7C18.239 7 16 10 16 10C16 10 13.761 7 11 7Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
-              <img onClick="addToCart(${product.id}, 'exploreCartIcon${
-        product.id
-      }')" id="exploreCartIcon${product.id}" src="images/cart-icon.svg"/>
+              <img onClick="addToCart(${product.id}, 'exploreCartIcon${product.id
+        }')" id="exploreCartIcon${product.id}" src="images/cart-icon.svg"/>
               </div>
     </div>`;
     })
