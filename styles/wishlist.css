@@ -17,8 +17,8 @@
   font-size: 12px;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 50px;
   margin-top: 40px;
+  margin-bottom: 50px;
 }
 .move-all-to-bag-btn {
   border: 1px solid black;
@@ -49,9 +49,7 @@
   position: relative;
   padding: 35px;
 }
-.product-title {
-  height: 80px;
-}
+
 .product-card-img {
   width: 100%;
   height: 250px;
@@ -137,30 +135,158 @@
   fill: darkgreen;
 }
 
-
-.whislist-empty{
+.whislist-empty {
   align-items: center;
   justify-content: center;
   text-align: center;
   margin: 0 auto;
-  
 }
-.whislist-empty h1{
+.whislist-empty h1 {
   font-size: 40px;
   font-weight: 700;
 }
-.whislist-empty p{
+.whislist-empty p {
   font-size: 24px;
   font-weight: 400;
   margin-top: 40px;
   margin-bottom: 40px;
 }
-.whislist-empty a{
+.whislist-empty a {
   font-size: 24px;
   font-weight: 400;
-  background-color:#db4444;
+  background-color: #db4444;
   color: #fafafa;
   margin: auto;
   padding: 20px 50px;
   border-radius: 5px;
+}
+
+.todays-products-container {
+  max-width: 1300px;
+  display: flex;
+  flex-direction: column;
+  margin: 100px auto;
+  padding-bottom: 80px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+/* .flash-sales-title {
+  position: absolute;
+} */
+
+.carousel-container {
+  position: relative;
+  margin: 50px 0;
+}
+
+.product-carousel {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 50px;
+}
+
+.product-card {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  color: black;
+  position: relative;
+  padding: 35px;
+}
+
+.product-title {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  display: inline-block;
+
+  text-overflow: ellipsis;
+
+  font-size: 16px;
+}
+.product-card-img {
+  width: 100%;
+  height: 250px;
+}
+
+.product-prices-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.product-price {
+  opacity: 50%;
+}
+
+.product-price-discounted {
+  color: #db4444;
+}
+
+.add-to-cart-btn {
+  position: relative;
+  width: 100%;
+  background-color: black;
+  color: white;
+  text-align: center;
+  opacity: 0;
+  padding: 10px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.product-card:hover .add-to-cart-btn {
+  opacity: 1;
+}
+
+.discount-rate,
+.sale-price {
+  display: flex;
+  background-color: #db4444;
+  color: white;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 400;
+  padding: 5px;
+  width: 55px;
+  justify-content: center;
+  top: 0px;
+  left: 5px;
+  position: absolute;
+}
+
+@media (max-width: 575px) {
+  /* .flash-sales-counter-container {
+    transform: scale(0.5);
+    margin-left: 45px;
+    align-items: flex-end;
+  } */
+
+  .product-carousel {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 20px;
+    margin: 0 auto;
+    width: 90%;
+  }
+  .product-card {
+    padding: 20px;
+  }
+  .add-to-cart-btn {
+    font-size: 8px;
+  }
+  .product-prices-container {
+    justify-content: start;
+  }
+  .product-card-img {
+    height: 150px;
+  }
+
+  .product-title,
+  .product-price-discounted,
+  .product-price,
+  .product-card p {
+    font-size: 12px;
+  }
 }

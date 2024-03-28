@@ -54,8 +54,11 @@ h2 {
     width: 15px;
     height: 30px;
   }
-  .red-filled-btn {
-    font-size: 14px;
+
+  .browse-by-container,
+  .best-selling-products,
+  .container {
+    padding: 0 20px;
   }
 }
 /* Header-as-container start */
@@ -321,6 +324,10 @@ h2 {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
+  padding: 0 20px;
+}
+.padding-class {
+  padding: 0 20px;
 }
 .flash-sales-left {
   display: flex;
@@ -514,10 +521,12 @@ h2 {
     transform: scale(0.5);
     margin-left: -60px;
   }
-  .product-carousel {
+  .product-carousel,
+  .explore-products-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 20px;
+    margin: 0 auto;
     width: 90%;
   }
   .product-card,
@@ -532,11 +541,15 @@ h2 {
   .best-product-prices-container {
     justify-content: start;
   }
-  .product-card-img {
+  .product-card-img,
+  .explore-products-img {
     height: 150px;
   }
   .stars {
-    transform: scale(0.7);
+    width: 50px;
+  }
+  .stars img {
+    width: 10px;
   }
   .products-rate,
   .best-products-rate,
@@ -547,7 +560,10 @@ h2 {
   .product-title,
   .product-price-discounted,
   .product-price,
-  .product-card p {
+  .product-card p,
+  .explore-product-price,
+  .explore-products-title,
+  .explore-products-rate {
     font-size: 12px;
   }
 }
@@ -751,7 +767,11 @@ h2 {
   padding: 5px 5px 0 5px;
   border-radius: 50%;
 }
-
+@media (max-width: 575px) {
+  .services {
+    transform: scale(0.8);
+  }
+}
 /* MÜCAHİT BEST SELLING PRODUCTS START */
 .best-selling-products {
   max-width: 1300px;
@@ -836,9 +856,154 @@ h2 {
   padding: 0 5px;
   top: 0;
 } */
+@media (max-width: 540px) {
+  .best-products-container {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+}
 
 /* MÜCAHİT BEST SELLING PRODUCTS END */
+/* Featured start */
 
+.homepage-featured-product {
+  max-width: 1300px;
+  height: 500px;
+  background-color: black;
+  display: flex;
+  margin: 0 auto;
+  position: relative;
+}
+
+.featured-product-left {
+  flex: 1;
+  margin-left: 55px;
+}
+
+.featured-product-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.product-img,
+.ellipse-shadow {
+  position: absolute;
+  transform: translateX(-50px);
+}
+
+.featured-product-title {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  color: #00ff66;
+  font-size: 16px;
+  margin-top: 70px;
+}
+
+.featured-product-text {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  color: #fafafa;
+  font-size: 48px;
+  margin: 30px 0;
+}
+
+.featured-product-counter-container {
+  display: flex;
+  gap: 20px;
+}
+
+.featured-product-counter-container div {
+  background-color: #fff;
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.counter-info {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  color: black;
+  font-size: 11px;
+}
+
+.featured-product-counter {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  color: black;
+  font-size: 16px;
+}
+
+.featured-product-counter-days {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.buy-now-btn {
+  background-color: #00ff66;
+  display: flex;
+  width: 170px;
+  height: 56px;
+  border-radius: 4px;
+  padding: 16px 48px;
+  font-size: 16px;
+  color: #fafafa;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  margin: 50px 0;
+  text-decoration: none;
+  bottom: 10px;
+  left: 55px;
+  position: absolute;
+}
+
+@media (max-width: 575px) {
+  .homepage-featured-product {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 600px;
+    width: 100%;
+  }
+
+  .featured-product-left {
+    transform: scale(0.7);
+    margin: 0 auto;
+  }
+
+  .featured-product-title,
+  .featured-product-counter-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .product-img,
+  .ellipse-shadow {
+    transform: translateY(-60px) scale(0.5);
+  }
+
+  .featured-product-text {
+    text-align: center;
+  }
+
+  .buy-now-btn {
+    transform: scale(0.7);
+    justify-content: center;
+    align-items: center;
+    bottom: 0;
+    margin: 0 auto;
+  }
+}
+/* Featured end */
 /* Mücahit Explore Our Products Start */
 .explore-our-products {
   max-width: 1300px;
@@ -852,13 +1017,15 @@ h2 {
   gap: 50px;
   margin-top: 40px;
 }
-
+.explore-products-subtitle {
+  padding: 0 20px;
+}
 .explore-wishlist-and-cart {
   display: flex;
   flex-direction: column;
   width: 30px;
   position: absolute;
-  right: -35px;
+  right: 0;
   top: -8px;
   cursor: pointer;
 }
@@ -868,5 +1035,14 @@ h2 {
 }
 .explore-product-price {
   color: rgb(219, 68, 68);
+}
+@media (max-width: 575px) {
+  .explore-products-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 20px;
+    margin: 50px auto;
+    width: 90%;
+  }
 }
 /* Mücahit Explore Our Products End */

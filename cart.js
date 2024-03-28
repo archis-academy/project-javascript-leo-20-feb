@@ -110,12 +110,12 @@ function renderCartProducts() {
   if (cartProducts.length > 0) {
     productsTable.innerHTML = cartProducts
       .map((product) => {
-        return `<tr><td onclick="deleteFromCardProducts(${
-          product.id
-        })" class="image-td"><img src=${product.image}><p>${
+        return `<tr><td  class="image-td"><img src=${product.image}><p>${
           product.title
-        }</p><img class="remove-icon" src="images/remove.png"/></td>
-    <td>${product.price} ₺</td>
+        }</p><img onclick="deleteFromCardProducts(${
+          product.id
+        })" class="remove-icon" src="images/remove.png"/></td>
+    <td>${product.price} $</td>
     <td><span class="quantity-box">${
       product.quantity
     }<span ><img class="up-icon" onclick="incrementQuantity(${
@@ -124,7 +124,7 @@ function renderCartProducts() {
           product.id
         })" src="images/angle-down-solid.svg"> </span></span>
     </td>
-    <td>${product.quantity * product.price} ₺</td></tr>`;
+    <td>${product.quantity * product.price} $</td></tr>`;
       })
       .join("");
   } else {
@@ -186,11 +186,11 @@ function calculateTotal() {
   return total.toFixed(2);
 }
 
-subtotal.textContent = `${calculateTotal()} ₺`;
-total.textContent = `${calculateTotal()} ₺`;
+subtotal.textContent = `${calculateTotal()} $`;
+total.textContent = `${calculateTotal()} $`;
 updateBtn.addEventListener("click", () => {
-  subtotal.textContent = `${calculateTotal()} ₺`;
-  total.textContent = `${calculateTotal()} ₺`;
+  subtotal.textContent = `${calculateTotal()} $`;
+  total.textContent = `${calculateTotal()} $`;
 });
 
 function makeDiscount(price, discount) {
@@ -203,8 +203,8 @@ function applyDiscount() {
   const coupon = coupons.find((coupon) => coupon.kod === inputValue);
   if (coupon) {
     const updatedPrice = makeDiscount(totalPrice, coupon.discount);
-    subtotal.textContent = `${updatedPrice} ₺`;
-    total.textContent = `${updatedPrice} ₺`;
+    subtotal.textContent = `${updatedPrice} $`;
+    total.textContent = `${updatedPrice} $`;
   } else {
     alert("Invalid coupon!");
   }

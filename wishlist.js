@@ -167,6 +167,7 @@ function addToCart(productId) {
   } else {
     deleteFromCart(productId);
   }
+  addToCartCount();
 }
 
 function deleteFromCart(deletedProductId) {
@@ -175,6 +176,7 @@ function deleteFromCart(deletedProductId) {
     (product) => product.id !== deletedProductId
   );
   localStorage.setItem("cartProducts", JSON.stringify(filteredProducts));
+  addToCartCount();
 }
 
 // ALL TO BAG MOVE CODES
@@ -188,6 +190,7 @@ function moveAllToBag() {
     "cartProducts",
     JSON.stringify([...cartProducts, ...filteredProducts])
   );
+  addToCartCount();
 }
 
 // Quantity icon start
@@ -211,7 +214,13 @@ function addToCartCount() {
     return acc + product.quantity;
   }, 0);
   const cartItemCountElement = document.getElementById("cart-item-count");
-  cartItemCountElement.textContent = `${totalQuantity}`;
+  if (totalQuantity > 0) {
+    cartItemCountElement.textContent = `${totalQuantity}`;
+    cartItemCountElement.classList.add("quantity-icon");
+  } else {
+    cartItemCountElement.textContent = ``;
+    cartItemCountElement.classList.remove("quantity-icon");
+  }
 }
 addToCartCount();
 // Quantity icon end

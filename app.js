@@ -654,9 +654,8 @@ function exploreProducts() {
         product.title
       }">
     <h3 class="explore-products-title">${product.title}</h3>
-    
-    <div class="explore-products-rate">
     <p class="explore-product-price">$${product.price}</p>
+    <div class="explore-products-rate">
               <p class="stars">${getStars(product.rating.rate)}</p>
               <p class="explore-product-rate">(${product.rating.count})</p>
               </div>
