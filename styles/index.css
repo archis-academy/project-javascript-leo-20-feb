@@ -295,6 +295,9 @@ h2 {
     width: 50%;
     margin-right: -50px;
   }
+  .padding-class {
+    padding: 0 20px;
+  }
 }
 
 @media (max-width: 460px) {
@@ -324,11 +327,9 @@ h2 {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
-  padding: 0 20px;
+  
 }
-.padding-class {
-  padding: 0 20px;
-}
+
 .flash-sales-left {
   display: flex;
   gap: 55px;
@@ -386,12 +387,10 @@ h2 {
 .best-products-title,
 .explore-products-title {
   overflow: hidden;
-  white-space: nowrap;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
   width: 100%;
-  display: inline-block;
-
-  text-overflow: ellipsis;
-
+  display: -webkit-box;
   font-size: 16px;
 }
 /* .all-title {
@@ -512,6 +511,7 @@ h2 {
   } */
   .flash-sales-container {
     align-items: start;
+    padding: 0 20px;
   }
   .flash-sales-left {
     gap: 0;
@@ -1017,9 +1017,7 @@ h2 {
   gap: 50px;
   margin-top: 40px;
 }
-.explore-products-subtitle {
-  padding: 0 20px;
-}
+
 .explore-wishlist-and-cart {
   display: flex;
   flex-direction: column;
@@ -1044,5 +1042,19 @@ h2 {
     margin: 50px auto;
     width: 90%;
   }
+  .explore-products-subtitle {
+    padding: 0 20px;
+  }
 }
 /* Mücahit Explore Our Products End */
+
+
+.back-to-top-scroll{
+display: flex;
+justify-content: end;
+position: -webkit-sticky;
+position: sticky;
+bottom: 5px;
+margin-right: 30px;
+transition: all 2s ease;
+}

@@ -16,7 +16,7 @@ option1.textContent = languages[0].name;
 
 selectBtn.addEventListener("click", () => {
   selectBtn.innerHTML = languages.map(
-    (lang) => `<option>${lang.name}</option>`
+    (lang) => `<option class="language-option">${lang.name}</option>`
   );
 });
 // Language end
@@ -95,13 +95,13 @@ const discountContainer = document.querySelector(".discountPercent")
 const coupons = [
   {
     id: 1,
-    kod: "YUZDE10",
-    discount: 10,
+    kod: "SALE30",
+    discount: 30,
   },
   {
     id: 2,
-    kod: "YUZDE20",
-    discount: 20,
+    kod: "SALE40",
+    discount: 40,
   },
 ];
 
@@ -192,6 +192,7 @@ total.textContent = `${calculateTotal()} $`;
 updateBtn.addEventListener("click", () => {
   subtotal.textContent = `${calculateTotal()} $`;
   total.textContent = `${calculateTotal()} $`;
+  
 });
 
 function makeDiscount(price, discount) {
@@ -207,7 +208,7 @@ function applyDiscount() {
     const discountedPrice = totalPrice - updatedPrice;
     total.textContent = `${updatedPrice} $`;
 
-    discountContainer.textContent = `${discountedPrice.toFixed(2)} $`
+    discountContainer.innerHTML = `<s>${discountedPrice.toFixed(2)} $</s>`
   } else {
     alert("Invalid coupon!");
   }

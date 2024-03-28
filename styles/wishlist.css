@@ -196,12 +196,10 @@
 
 .product-title {
   overflow: hidden;
-  white-space: nowrap;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
   width: 100%;
-  display: inline-block;
-
-  text-overflow: ellipsis;
-
+  display: -webkit-box;
   font-size: 16px;
 }
 .product-card-img {

@@ -165,6 +165,12 @@ header a {
   align-items: center;
   justify-content: center;
 }
+.language-option{
+  background-color: black;
+}
+.select-language-btn{
+  background-color: black;
+}
 /* Hr-container end */
 @media (max-width: 880px) {
   .header-top-navbar {

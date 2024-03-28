@@ -16,7 +16,7 @@ option1.textContent = languages[0].name;
 
 selectBtn.addEventListener("click", () => {
   selectBtn.innerHTML = languages.map(
-    (lang) => `<option>${lang.name}</option>`
+    (lang) => `<option class="language-option">${lang.name}</option>`
   );
 });
 // Language end

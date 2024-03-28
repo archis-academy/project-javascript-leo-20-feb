@@ -22,7 +22,7 @@ option1.textContent = languages[0].name;
 
 selectBtn.addEventListener("click", () => {
   selectBtn.innerHTML = languages.map(
-    (lang) => `<option>${lang.name}</option>`
+    (lang) => `<option class="language-option">${lang.name}</option>`
   );
 });
 // Language end
@@ -164,7 +164,7 @@ setInterval(() => {
 //Yüsra PR-2 Homepage Todays Products
 
 //beginning of counter
-const targetDate = new Date("2024-03-29");
+const targetDate = new Date("2024-04-3");
 
 function countdown() {
   const currentDate = new Date();
@@ -645,7 +645,7 @@ const exploreProductsContainer = document.querySelector(
 );
 
 function exploreProducts() {
-  const firstEightProducts = allProducts.slice(0, 8);
+  const firstEightProducts = allProducts.slice(12, 20);
 
   exploreProductsContainer.innerHTML = firstEightProducts
     .map((product) => {
