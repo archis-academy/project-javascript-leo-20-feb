@@ -90,6 +90,7 @@ const couponInput = document.querySelector(".coupon-box input");
 const applyBtn = document.querySelector(".coupon-box button");
 const removeIcon = document.querySelector(".remove-icon");
 const emptyContainer = document.querySelector(".empty-container");
+const discountContainer = document.querySelector(".discountPercent")
 
 const coupons = [
   {
@@ -203,8 +204,10 @@ function applyDiscount() {
   const coupon = coupons.find((coupon) => coupon.kod === inputValue);
   if (coupon) {
     const updatedPrice = makeDiscount(totalPrice, coupon.discount);
-    subtotal.textContent = `${updatedPrice} $`;
+    const discountedPrice = totalPrice - updatedPrice;
     total.textContent = `${updatedPrice} $`;
+
+    discountContainer.textContent = `${discountedPrice.toFixed(2)} $`
   } else {
     alert("Invalid coupon!");
   }

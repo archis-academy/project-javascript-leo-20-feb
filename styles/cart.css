@@ -142,7 +142,8 @@ td > img {
   padding: 15px 0;
 }
 .subtotal,
-.shipping {
+.shipping,
+.discount {
   border-bottom: 1px solid rgba(0, 0, 0, 0.5);
 }
 .total-box button {
