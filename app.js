@@ -507,8 +507,8 @@ const categoryContents = [
 ];
 
 const categoryBoxes = document.querySelector(".category-boxes");
-const movetoLeftIcon = document.querySelector(".move-to-left-icon");
-const movetoRightIcon = document.querySelector(".move-to-right-icon");
+const movetoLeftIcon = document.getElementById("move-to-left-icon-id");
+const movetoRightIcon = document.getElementById("move-to-right-icon-id");
 let currIndex = 0;
 
 function renderCategories() {
