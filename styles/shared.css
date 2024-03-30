@@ -267,7 +267,8 @@ header a {
     margin-right: 5px;
   }
   .quantity-icon {
-    width: 12px;
+    width: 13px;
+    height: 13px;
     font-size: 10px;
   }
 }

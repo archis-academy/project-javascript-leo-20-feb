@@ -890,6 +890,7 @@ h2 {
   display: flex;
   margin: 80px auto 0 auto;
   position: relative;
+  overflow: hidden;
 }
 
 .featured-product-left {
