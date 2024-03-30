@@ -111,19 +111,14 @@ function renderCartProducts() {
   if (cartProducts.length > 0) {
     productsTable.innerHTML = cartProducts
       .map((product) => {
-        return `<tr><td  class="image-td"><img src=${product.image}><p>${
-          product.title
-        }</p><img onclick="deleteFromCardProducts(${
-          product.id
-        })" class="remove-icon" src="images/remove.png"/></td>
+        return `<tr><td  class="image-td"><img src=${product.image}><p>${product.title
+          }</p><img onclick="deleteFromCardProducts(${product.id
+          })" class="remove-icon" src="images/remove.png"/></td>
     <td>${product.price} $</td>
-    <td><span class="quantity-box">${
-      product.quantity
-    }<span ><img class="up-icon" onclick="incrementQuantity(${
-          product.id
-        })" src="images/angle-up-solid.svg"> <img class="down-icon" onclick="decrementQuantity(${
-          product.id
-        })" src="images/angle-down-solid.svg"> </span></span>
+    <td><span class="quantity-box">${product.quantity
+          }<span ><img class="up-icon" onclick="incrementQuantity(${product.id
+          })" src="images/angle-up-solid.svg"> <img class="down-icon" onclick="decrementQuantity(${product.id
+          })" src="images/angle-down-solid.svg"> </span></span>
     </td>
     <td>${product.quantity * product.price} $</td></tr>`;
       })
@@ -192,7 +187,7 @@ total.textContent = `${calculateTotal()} $`;
 updateBtn.addEventListener("click", () => {
   subtotal.textContent = `${calculateTotal()} $`;
   total.textContent = `${calculateTotal()} $`;
-  
+
 });
 
 function makeDiscount(price, discount) {
@@ -206,7 +201,7 @@ function applyDiscount() {
   if (coupon) {
     const updatedPrice = makeDiscount(totalPrice, coupon.discount);
     const discountedPrice = totalPrice - updatedPrice;
-    total.textContent = `${updatedPrice} $`;
+    total.textContent = `${updatedPrice.toFixed(2)} $`;
 
     discountContainer.innerHTML = `<s>${discountedPrice.toFixed(2)} $</s>`
   } else {
