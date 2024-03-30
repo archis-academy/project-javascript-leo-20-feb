@@ -165,10 +165,10 @@ header a {
   align-items: center;
   justify-content: center;
 }
-.language-option{
+.language-option {
   background-color: black;
 }
-.select-language-btn{
+.select-language-btn {
   background-color: black;
 }
 /* Hr-container end */
@@ -260,6 +260,14 @@ header a {
   }
   .searchbar input {
     width: 140px;
+    font-size: 10px;
+  }
+  .top-search-section {
+    gap: 0;
+    margin-right: 5px;
+  }
+  .quantity-icon {
+    width: 12px;
     font-size: 10px;
   }
 }
@@ -358,7 +366,21 @@ ul {
   color: #4a4a4a;
 }
 /* Responsive */
+@media (max-width: 1080px) {
+  .app-links {
+    display: flex;
+    flex-direction: column;
+  }
+  .app-links > img {
+    width: 110px;
+    margin-bottom: 10px;
+  }
+}
 @media (max-width: 767px) {
+  .app-links {
+    display: flex;
+    flex-direction: row;
+  }
   .footer-col {
     width: 50%;
     margin-bottom: 30px;
